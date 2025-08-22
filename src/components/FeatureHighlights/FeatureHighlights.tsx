@@ -19,7 +19,7 @@ export function FeatureHighlights() {
 
   return (
     <div className="mx-auto">
-      <div className="lg:mt-20 mx-auto grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-6 py-5 px-3 lg:px-0">
+      <div className="lg:mt-20 lg:mb-20 mx-auto grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-6 py-5 px-3 lg:px-0">
           {loading
             ? features.map((feature: Feature) => (
                 <FeatureBadgeSkeleton

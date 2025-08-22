@@ -32,7 +32,7 @@ const UpthrustAchievement = () => {
 
   return (
     <section className="py-8 xs:py-10 sm:py-12 md:py-16 lg:py-24 bg-themeBackgroundColor overflow-hidden">
-      <div className="container mx-auto px-3 lg:px-0 w-full">
+      <div className=" mx-auto px-3 lg:px-0 w-full">
         <motion.div
           className="flex flex-col lg:grid lg:grid-cols-3 w-full gap-6 xs:gap-8 lg:gap-12"
           variants={containerVariants}
@@ -51,7 +51,7 @@ const UpthrustAchievement = () => {
             >
               <div className="flex items-baseline flex-wrap gap-2">
                 <motion.h2
-                  className="text-xl sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl leading-8 font-bold text-gray-900 mb-4"
+                  className="text-xl sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl leading-8 font-bold text-gray-900 "
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
@@ -59,7 +59,7 @@ const UpthrustAchievement = () => {
                   {title}
                 </motion.h2>
                 <motion.img
-                  className="h-16 xs:h-20 sm:h-24 md:h-28 "
+                  className="h-16 xs:h-20 sm:h-24 md:h-28  lg:w-15 xl:h-20  "
                   src="/images/svg/trophy.svg"
                   alt="Trophy"
                   initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
@@ -69,7 +69,7 @@ const UpthrustAchievement = () => {
                 />
               </div>
               <motion.h1
-                className="text-xl sm:text-xl md:text-2xl lg:text-4xl 2xl:text-4xl leading-8 font-bold text-gray-900 mb-4"
+                className="text-2xl  md:text-2xl lg:text-4xl 2xl:text-4xl leading-8 font-bold text-gray-900 mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}

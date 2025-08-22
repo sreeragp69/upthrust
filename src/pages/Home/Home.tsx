@@ -14,18 +14,18 @@ import Subscribe from "../../components/Subscribe/Subscribe";
 const Home = () => {
   return (
     <>
-      {/* <LandingPage /> */}
-      {/* <AboutSection /> */}
-      {/* <FeatureHighlights /> */}
-      {/* <CourseSection /> */}
-      {/* <WhyUs /> */}
-      {/* <LearnLatest /> */}
+      <LandingPage />
+      <AboutSection />
+      <FeatureHighlights />
+      <CourseSection />
+      <WhyUs />
+      <LearnLatest />
       <UpthrustAchievement />
-      {/* <TestimonialsSection /> */}
-      {/* <BlogSection /> */}
-      {/* 
+      <TestimonialsSection />
+      <BlogSection />
+      
       <CentreSection />
-      <Subscribe /> */}
+     
     </>
   );
 };

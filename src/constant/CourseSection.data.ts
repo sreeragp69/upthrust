@@ -38,7 +38,7 @@ export const courseSectionData = {
       title: "DIGITAL MARKETING",
       description:
         "With our experience of 11 years in Digital Marketing training and Game.",
-      image: "images/cards/digitalmarketing.png",
+      image: "images/cards/gaming.jpg",
       rating: 4.8,
       studentCount: 75,
       category: "Marketing",
@@ -68,7 +68,7 @@ export const courseSectionData = {
       title: "CYBERSECURITY",
       description:
         "With our experience of 11 years in Digital Marketing training and Game.",
-      image: "/cybersecurity-dashboard.png",
+      image: "images/cards/webdev.jpg",
       rating: 4.9,
       studentCount: 35,
       category: "Security",
@@ -78,7 +78,7 @@ export const courseSectionData = {
       title: "CLOUD COMPUTING",
       description:
         "With our experience of 11 years in Digital Marketing training and Game.",
-      image: "/placeholder-fmid7.png",
+      image: "images/cards/uiux.jpg",
       rating: 4.4,
       studentCount: 55,
       category: "Infrastructure",

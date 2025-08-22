@@ -39,7 +39,7 @@ export default function LoginForm() {
       const mockToken = "mock-jwt-token";
 
       saveAuth(mockUser, mockToken);
-      dispatch(setUser({ user: mockUser, token: mockToken }));
+     
 
       // Navigate to dashboard
       navigate("/");

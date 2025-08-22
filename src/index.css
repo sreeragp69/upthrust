@@ -230,12 +230,12 @@
 
   /* Hide all scrollbars */
   * {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   *::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none; 
   }
 
   html,
@@ -322,3 +322,13 @@
   transition-delay: calc(0s + 0.1s * 1.3), calc(0s + 0.1s * 1.3);
 }
 /* Theme Toggler Button ends */
+
+.swiper-cards .swiper-slide {
+  background: none !important; /* removes grey background */
+}
+
+.swiper-cards .swiper-slide-shadow,
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none !important; /* removes shadow overlays */
+}

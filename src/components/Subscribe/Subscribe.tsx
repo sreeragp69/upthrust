@@ -38,9 +38,9 @@ const Subscribe: React.FC<SubscribeProps> = ({ isLoading = false }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 absolute z-10 bottom-[8%] sm:bottom-[7%] md:bottom-[6.5%] lg:bottom-[6.2%] left-1/2 -translate-x-1/2"
+      className="w-[70%] max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 absolute z-10  -top-[20%] left-1/2 -translate-x-1/2"
     >
-      <div className="bg-gradient-to-r from-themePrimary to-themePrimary rounded-2xl sm:rounded-3xl lg:rounded-[53px] shadow-2xl overflow-hidden relative">
+      <div className="bg-gradient-to-r from-themePrimary to-themePrimary rounded-4xl md:rounded-[50px] lg:rounded-[53px] shadow-2xl overflow-hidden relative">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-20 sm:w-32 md:w-40 lg:w-64 xl:w-96 h-20 sm:h-32 md:h-40 lg:h-64 xl:h-96 bg-white rounded-full -translate-y-10 sm:-translate-y-16 md:-translate-y-20 lg:-translate-y-32 xl:-translate-y-48 translate-x-10 sm:translate-x-16 md:translate-x-20 lg:translate-x-32 xl:translate-x-48"></div>
@@ -53,14 +53,14 @@ const Subscribe: React.FC<SubscribeProps> = ({ isLoading = false }) => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-3 sm:space-y-4 md:space-y-5 p-4 sm:p-5 md:p-6 lg:p-8 order-2 lg:order-1 text-center lg:col-span-7 lg:text-left"
+            className="space-y-3  sm:space-y-4 md:space-y-5 lg:space-y-2 p-4 sm:p-5 md:p-6 lg:p-8 order-2 lg:order-1 text-center lg:col-span-7 lg:text-left"
           >
             <div className="space-y-2 sm:space-y-3">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-normal leading-snug sm:leading-tight alexandria"
+                className="text-white text-sm sm:text-base md:text-lg  lg:text-base font-normal leading-snug sm:leading-tight alexandria"
               >
                 {SUBSCRIBE_DATA.heading}
               </motion.h2>
@@ -68,7 +68,7 @@ const Subscribe: React.FC<SubscribeProps> = ({ isLoading = false }) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold leading-tight"
+                className="text-white/90 text-base sm:text-lg md:text-xl lg:text-xl xl:text-3xl font-bold leading-tight"
               >
                 {SUBSCRIBE_DATA.subheading}
               </motion.p>
@@ -82,14 +82,14 @@ const Subscribe: React.FC<SubscribeProps> = ({ isLoading = false }) => {
               onSubmit={handleSubmit}
               className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full max-w-sm sm:max-w-md mx-auto lg:mx-0"
             >
-              <div className="flex-1 relative">
+              <div className="flex-1 relative ">
                 <input
                   type="email"
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder={SUBSCRIBE_DATA.placeholder}
                   required
-                  className="w-full h-10 sm:h-11 md:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border-0 bg-white text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-blue-300 focus:outline-none text-sm font-medium shadow-lg"
+                  className="w-full h-10 sm:h-11 md:h-12  lg:h-9 xl:h-10  px-3 sm:px-4  rounded-lg sm:rounded-xl border-0 bg-white text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-blue-300 focus:outline-none text-sm font-medium shadow-lg"
                 />
               </div>
               <motion.button
@@ -97,7 +97,7 @@ const Subscribe: React.FC<SubscribeProps> = ({ isLoading = false }) => {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto px-4 sm:px-5 md:px-6 h-10 sm:h-11 md:h-12 bg-green-500 hover:bg-green-600 text-white font-bold text-sm rounded-lg sm:rounded-xl shadow-lg transition-colors duration-200 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto px-4 sm:px-5 md:px-6 h-10 sm:h-11 md:h-12 lg:h-9 xl:h-10 bg-green-500 hover:bg-green-600 text-white font-bold text-sm rounded-lg sm:rounded-xl shadow-lg transition-colors duration-200 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "SUBSCRIBING..." : SUBSCRIBE_DATA.buttonText}
               </motion.button>
@@ -143,7 +143,7 @@ const Subscribe: React.FC<SubscribeProps> = ({ isLoading = false }) => {
               <img
                 src="images/cards/subscribe.png"
                 alt="3D Character working at computer"
-                className="w-full h-full max-h-48 sm:max-h-56 md:max-h-64 lg:max-h-72 object-contain"
+                className="w-full h-full  object-cover"
               />
             </div>
           </motion.div>

@@ -97,7 +97,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
 
   return (
     <motion.section 
-      className=" bg-themeBackgroundColor"
+      className="px-3 lg:p-0 bg-themeBackgroundColor"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -112,14 +112,14 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
       >
         {/* Header */}
         <motion.div 
-          className="flex flex-col text-start items-start justify-start mb-12"
+          className="flex flex-col gap-3 xl:gap-5 items-start mb-7"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <motion.h2 
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            className="text-themeGray font-bold text-xl sm:text-xl md:text-2xl 2xl:text-4xl  leading-8"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -127,7 +127,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
             {courseSectionData.title}
           </motion.h2>
           <motion.p 
-            className="text-gray-600 w-full sm:w-2/3 md:w-1/2 lg:w-[30%]"
+            className="text-[#6D758F] text-xs xl:text-base 2xl:text-base tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria  w-full sm:w-2/3 md:w-1/2 lg:w-[30%]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -150,7 +150,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
             transition={{ duration: 0.2 }}
           >
             <motion.span 
-              className="text-base sm:text-lg font-medium"
+              className="text-base sm:text-lg lg:text-lg font-alexandria xl:text-xl 2xl:text-xl font-medium"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.4 }}
@@ -160,7 +160,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
             <motion.img
               src="/images/icons/arrow.svg"
               alt=""
-              className="h-4 w-4 sm:h-5 sm:w-5"
+              className="h-7 w-10  lg:h-8 lg:w-16"
               initial={{ opacity: 0, x: -5 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5, duration: 0.3 }}
@@ -176,7 +176,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
           >
             <motion.button
               onClick={handleNextSlide}
-              className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-[#818181]"
+              className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full text-[#818181]"
               whileHover={{ scale: 1.1, backgroundColor: "rgba(0,0,0,0.05)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
@@ -188,7 +188,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
 
         {/* Swiper Slider */}
         <motion.div 
-          className="w-[90vw] lg:w-full px-4 py-4 overflow-hidden"
+          className="relative w-[82vw] sm:w-[90vw] md:w-[90vw] min-[1680px]:w-[90%] mx-auto px-4 py-7 overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -201,7 +201,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
             loop={true}
             onSwiper={setSwiper}
             onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)}
-            className="course-swiper"
+            className="course-swiper scale-110 md:scale-100"
             // pagination={{ clickable: true }}
             breakpoints={{
               320: {

@@ -60,7 +60,7 @@ const CentreSection = () => {
 
   return (
     <motion.section
-      className="py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20 mb-16 sm:mb-20 md:mb-24 lg:mb-32 xl:mb-40 container mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className=" mb-68 sm:mb-70 md:mb-70 lg:mb-50 xl:mb-40 py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20  container mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
@@ -70,7 +70,7 @@ const CentreSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <motion.div
-            className="flex flex-col items-start space-y-3 sm:space-y-4 md:space-y-5 text-center lg:text-left order-2 lg:order-1"
+            className="flex flex-col items-start space-y-3 sm:space-y-4 md:space-y-5 text-center lg:text-left "
             variants={itemVariants}
           >
             <div className="flex items-baseline flex-wrap gap-2 justify-center lg:justify-start">
@@ -92,7 +92,7 @@ const CentreSection = () => {
               Innovation
             </motion.h1>
             <motion.p
-              className="text-sm sm:text-base md:text-lg lg:text-xl max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg font-alexandria text-[#6D758F] leading-relaxed mx-auto lg:mx-0"
+              className="text-sm sm:text-base justify-start text-start md:text-lg lg:text-xl  max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg font-alexandria text-[#6D758F] leading-relaxed "
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -109,7 +109,7 @@ const CentreSection = () => {
             variants={itemVariants}
           >
             <motion.div
-              className="bg-white p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl sm:rounded-3xl lg:rounded-4xl shadow-theme-xs flex flex-col justify-between
+              className="bg-white h-full p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl sm:rounded-3xl lg:rounded-4xl shadow-theme-xs flex flex-col justify-between
                  aspect-[415/298] w-full max-w-[300px] sm:max-w-[350px] md:max-w-[415px] mx-auto"
               variants={cardVariants}
               initial="hidden"
@@ -125,8 +125,8 @@ const CentreSection = () => {
                 />
               </div>
 
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-center text-gray-700">
-                {/* {item.title} */}
+              <p className="text-sm sm:text-base md:text-lg  lg:text-xl font-bold text-center text-gray-700">
+              
               </p>
             </motion.div>
 
@@ -143,11 +143,11 @@ const CentreSection = () => {
                 <img
                   src={CentreSectionCard2.image}
                   alt={CentreSectionCard2.alt}
-                  className="max-w-[60%] sm:max-w-[65%] md:max-w-[70%] object-contain"
+                  className="w-[60%] sm:w-[55%] md:w-[30%] object-cover"
                 />
               </div>
 
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-center text-gray-700 leading-tight">
+              <p className="text-sm sm:text-base md:text-lg mt-2 lg:text-base font-bold text-center text-gray-700 leading-tight">
                 {CentreSectionCard2.title}
               </p>
             </motion.div>

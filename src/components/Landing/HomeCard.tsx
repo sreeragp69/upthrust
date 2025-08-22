@@ -46,7 +46,7 @@ const HomeCard: React.FC<HomeCardProps> = ({
   }, []);
 
   return (
-    <div className="w-full max-w-sm">
+    <div className="w-full  max-w-sm">
       <motion.div
         ref={cardRef}
         key={id}
@@ -65,7 +65,7 @@ const HomeCard: React.FC<HomeCardProps> = ({
         className="relative overflow-visible rounded-3xl  cursor-pointer group"
       >
         {/* Background Container */}
-        <div className="relative h-96 lg:h-[28rem]  overflow-visible">
+        <div className="relative   overflow-visible">
           <motion.img
             src={backgroundImage}
             alt="Game development background"
@@ -75,13 +75,13 @@ const HomeCard: React.FC<HomeCardProps> = ({
             <motion.img
               src={characterImage}
               alt={alt}
-              className="absolute z-99999 top-[22%] left-1/2  -translate-x-1/2 -translate-y-1/2  lg:h-[314px] object-contain  pointer-events-none"
+              className="absolute z-99999 top-[22%] left-1/2  -translate-x-1/2 -translate-y-1/2 h-40  lg:h-[314px] object-contain  pointer-events-none"
             />
           )}
         </div>
 
         {/* Text Content */}
-        <div className="absolute   bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12 z-20">
+        <div className="absolute  scale-80 md:scale-95 lg:scale-100 pb-8  bottom-0 left-0 right-0 px-8  sm:p-8 md:pl-6   lg:p-12 lg:pb-10 xl:pb-11 z-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -90,14 +90,14 @@ const HomeCard: React.FC<HomeCardProps> = ({
             className="text-white"
           >
             <motion.h2
-              className="text-xl font-light mb-1 tracking-wide drop-shadow-lg"
+              className="text-xl md:text-lg lg:text-xl font-light mb-1 tracking-wide drop-shadow-lg"
               whileHover={{ x: 5 }}
               transition={{ duration: 0.2 }}
             >
               Become a
             </motion.h2>
             <motion.h1
-              className="text-4xl font-clash font-bold uppercase   leading-tight tracking-tight drop-shadow-lg"
+              className=" text-4xl md:text-2xl lg:text-4xl font-clash font-bold uppercase   leading-tight tracking-tight drop-shadow-lg"
               whileHover={{ x: 5 }}
               transition={{ duration: 0.2, delay: 0.1 }}
             >

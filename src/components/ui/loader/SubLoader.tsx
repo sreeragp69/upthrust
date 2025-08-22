@@ -1,5 +1,12 @@
 import { Loader as LoadingIcon } from "lucide-react";
-import { SubLoaderProps } from "../../../types/Loader";
+interface SubLoaderProps {
+  size?: number;  
+  color?: string;
+  text?: string;  
+  height?: string;
+
+
+}
 
 function SubLoader({
   size = 24,

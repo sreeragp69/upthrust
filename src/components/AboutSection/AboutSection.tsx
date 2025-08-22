@@ -121,7 +121,7 @@ const AboutSection = () => {
           >
             <ImageWithFallback
               className="w-full h-full object-cover"
-              src="images/svg/aboutSecimg4.svg"
+              src="/images/svg/aboutSecimg4.png"
               alt="About section illustration"
              
             />
