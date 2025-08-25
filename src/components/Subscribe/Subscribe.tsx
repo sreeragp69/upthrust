@@ -9,6 +9,7 @@ import type {
 } from "../../types/Subscribe.type";
 import { SUBSCRIBE_DATA } from "../../constant/Subscribe.data";
 import SubscribeSkeleton from "./SubscribeSkeleton";
+import SubscribeImg from '../../assets/images/cards/subscribe.png'
 
 const Subscribe: React.FC<SubscribeProps> = ({ isLoading = false }) => {
   const [formData, setFormData] = useState<SubscribeFormData>({ email: "" });
@@ -141,7 +142,7 @@ const Subscribe: React.FC<SubscribeProps> = ({ isLoading = false }) => {
           >
             <div className="relative h-full w-full flex items-center justify-center lg:justify-end">
               <img
-                src="images/cards/subscribe.png"
+                src={SubscribeImg}
                 alt="3D Character working at computer"
                 className="w-full h-full  object-cover"
               />

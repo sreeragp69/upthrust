@@ -52,9 +52,12 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
       swiper.slideNext();
     }
   };
+ 
+  
 
   return (
     <motion.section 
+    id="batches"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
@@ -85,7 +88,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
               spaceBetween={0}
               slidesPerView={1}
               onSwiper={setSwiper}
-              onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
+              onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)}
               autoplay={{
                 delay: 5000,
                 disableOnInteraction: false,
@@ -108,7 +111,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
               className="flex flex-col sm:grid sm:grid-cols-2 sm:justify-end gap-4 mt-6 sm:mt-8 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto"
             >
               <div></div>
-              <div className="flex justify-center sm:justify-end gap-4 md:gap-7">
+              <div className="flex justify-start gap-4 md:gap-7">
                 <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                   <ArrowButton onClick={handlePrevSlide} direction="left" borderColor="#E1E4ED" color="#000" />
                 </motion.div>

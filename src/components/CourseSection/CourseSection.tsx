@@ -3,7 +3,7 @@
 import type React from "react";
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { FreeMode, Navigation, Pagination } from "swiper/modules";
 import { ChevronLeft, ChevronRight, ChevronsRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { courseSectionData } from "../../constant/CourseSection.data.js";
@@ -97,6 +97,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
 
   return (
     <motion.section 
+    id="courses"
       className="px-3 lg:p-0 bg-themeBackgroundColor"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -195,14 +196,15 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
           transition={{ duration: 0.7, delay: 0.4 }}
         >
           <Swiper
-            modules={[Navigation, Pagination]}
+            modules={[FreeMode,Navigation, Pagination]}
             spaceBetween={16}
             slidesPerView={1}
             loop={true}
             onSwiper={setSwiper}
             onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)}
             className="course-swiper scale-110 md:scale-100"
-            // pagination={{ clickable: true }}
+            // pagination={{ clickable: true }}  
+            
             breakpoints={{
               320: {
                 slidesPerView: 1,

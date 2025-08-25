@@ -1,15 +1,13 @@
 import { m, motion } from "framer-motion";
 import React from "react";
 import Button from "../ui/button/Button";
-const RightArrowIMg = "/images/icons/rightArrow.svg";
-
-
+import HoverButton from "../ui/button/HoverButton";
+import RightArrowIMg from '../../assets/images/button/Pattern.svg'
 
 
 interface AboutLeftContentProps {
   itemVariants: any;
 }
-
 
 const AboutLeftContent = ({ itemVariants }: AboutLeftContentProps) => {
   return (
@@ -55,10 +53,10 @@ const AboutLeftContent = ({ itemVariants }: AboutLeftContentProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <Button
+          <HoverButton
             children="More About"
-            size="sm"
-            className="py-2! px-4!  scale-90 md:scale-95 -ml-2 lg:ml-0 lg:scale-100 text-xs!"
+           
+            className=" px-4!  scale-90 md:scale-95 -ml-2 lg:ml-0 lg:scale-100 text-xs!"
             endIcon={<RightArrowIcon />}
           />
         </motion.div>

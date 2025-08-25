@@ -27,7 +27,6 @@ Upthrust Institute is a premier educational institution specializing in:
 ### 📚 Educational Features
 - **Course Management**: Browse and enroll in courses
 - **Project-Based Learning**: Hands-on project assignments
-- **Learning Dashboard**: Track progress and achievements
 - **Certificate System**: Digital certificates upon completion
 - **Calendar Integration**: Schedule classes and events
 
@@ -47,32 +46,6 @@ npm run dev
 ```bash
 npm run build
 ```
-
-## 🎯 User Roles & Navigation
-
-### Student Dashboard
-- 📊 Dashboard Overview
-- 📚 Available Courses
-- 🎓 My Learning Progress
-- 💼 Project Portfolio
-- 📅 Class Schedule
-- ⚙️ Account Settings
-
-### Instructor Dashboard
-- 📊 Teaching Dashboard
-- 📚 My Courses
-- 👥 Student Management
-- 💼 Project Assignments
-- 🏆 Certificate Issuance
-- 📅 Teaching Schedule
-
-### Admin Dashboard
-- 📊 System Overview
-- 📚 Course Management
-- 👥 Student Directory
-- 💼 Project Management
-- 🏆 Certificate System
-- 📅 Event Calendar
 
 ## 🛠️ Technologies Used
 

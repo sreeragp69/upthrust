@@ -194,7 +194,7 @@ const NotFound: React.FC = () => {
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-white/80 hover:bg-white text-gray-700 font-semibold rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300"
-                  onClick={() => window.location.href = '/dashboard'}
+                  onClick={() => window.location.href = '/'}
                 >
                   <Home className="w-5 h-5" />
                   Home

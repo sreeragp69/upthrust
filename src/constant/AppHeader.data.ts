@@ -2,17 +2,17 @@ const AppHeaderData = [
   {
     id: 1,
     name: "Home",
-    path: "/",
+    path: "#home",
   },
   {
     id: 2,
     name: "About us",
-    path: "/about-us",
+    path: "#about-us",
   },
   {
     id: 3,
     name: "Courses",
-    path: "/courses",
+    path: "#courses",
     isDropdown: true,
     dropdownList:[
       {
@@ -46,17 +46,17 @@ const AppHeaderData = [
   {
     id: 4,
     name: "Batches",
-    path: "/batches",
+    path: "#batches",
   },
   {
     id: 5,
     name: "Blog",
-    path: "/blog",
+    path: "#blog",
   },
   {
     id: 6,
     name: "Contact us",
-    path: "/contact-us",
+    path: "#contact-us",
   },
 ];
 

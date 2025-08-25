@@ -28,7 +28,9 @@ const BlogSection: React.FC<BlogSectionProps> = ({
   }, [loading])
 
   return (
-    <section className="py-16 px-4  ">
+    <section 
+      id="blog"
+    className="py-16 px-4  ">
       <div className=" mx-auto">
         {/* Header */}
         <div className="text-center flex items-center flex-col mb-16">

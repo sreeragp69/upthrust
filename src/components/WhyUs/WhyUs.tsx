@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { whyUsData } from "../../constant/WhyUs.data";
 import { WhyUsData } from "../../types/WhyUs.type";
+import Fallback from '../../assets/images/error/fallback.png'
 
 import Content from "../ui/Content/Content";
 import StatisticCard from "./StatisticCard";
@@ -14,7 +15,6 @@ import {
 } from "./WhyUsSkeleton";
 import ContentSkeleton from "../ui/skeletons/ContentSkeleton";
 
-const FALLBACK_IMG = "/images/error/fallback.svg";
 
 const WhyUs: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -43,7 +43,7 @@ const WhyUs: React.FC = () => {
  if (isLoading) {
     return (
       <section className="py-12">
-        <div className="container mx-auto px-4">
+        <div className=" mx-auto px-4">
           {/* Header Skeleton */}
           <div className="animate-pulse text-center sm:text-left mb-8 lg:mb-12">
             <div className="h-6 sm:h-8 lg:h-10 bg-gray-200 rounded w-1/3 mx-auto sm:mx-0 mb-3"></div>
@@ -130,9 +130,9 @@ const WhyUs: React.FC = () => {
             className="lg:col-span-6 flex justify-center order-first lg:order-none mb-8 lg:mb-0"
             variants={itemVariants}
           >
-            <div className="relative w-full max-w-xs sm:max-w-s xl:max-w-lg mx-auto">
+            <div className="relative w-full max-w-xs sm:max-w-s  mx-auto">
               <motion.img
-                src={imgError ? FALLBACK_IMG : data.illustration.src}
+                src={imgError ? Fallback : data.illustration.src}
                 alt={data.illustration.alt}
                 onError={() => setImgError(true)}
                 className="w-full h-auto object-contain rounded-4xl relative z-10 mx-auto"

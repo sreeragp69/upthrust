@@ -11,7 +11,7 @@ export interface GameDevCard {
   title: string;
   subtitle: string;
   backgroundImage: string;
-  charecterTrue: boolean;
+  characterTrue: boolean;
   characterImage?: string;
   alt: string;
 }

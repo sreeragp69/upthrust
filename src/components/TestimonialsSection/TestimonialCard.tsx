@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import TestimonialSkeleton from "./TestimonialSkeleton";
 import { TestimonialCardProps } from "../../types/TestimonialsSection.type";
+import upthrustbg from '../../assets/images/carosel/upthrustbg.png'
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({
   testimonial,
@@ -24,9 +25,9 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       transition={{ duration: 0.5 }}
       className="w-full mx-auto px-4 sm:px-6 lg:px-8"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2  place-items-center  ">
         {/* Left side - Background with person image */}
-        <div className="relative flex justify-center lg:justify-start order-2 lg:order-1">
+        <div className="relative flex justify-center lg:justify-start order-2 lg:order-1 ">
           <motion.div
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
@@ -49,7 +50,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 src={
                   bgImageError
                     ? "/images/error/fallback.png"
-                    : "/images/carousel/upthrustbg.svg"
+                    :upthrustbg
                 }
                 alt="Background decoration"
                 className={`w-full h-full object-contain ${
@@ -102,9 +103,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           initial={{ x: 20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.1, duration: 0.5 }}
-          className="space-y-4 sm:space-y-6 order-1 lg:order-2"
+          className="space-y-4 sm:space-y-6 order-1 lg:order-2  self-start "
         >
-          <div className="space-y-3">
+          <div className="w-2/3">
+            <div className="space-y-3">
             <motion.p
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -120,7 +122,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
               transition={{ delay: 0.3, duration: 0.3 }}
               className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight"
             >
-              What our students are saying
+              What our students <br /> are saying
             </motion.h2>
 
             <motion.p
@@ -131,6 +133,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
             >
               {testimonial.testimonial}
             </motion.p>
+          </div>
           </div>
 
           <motion.div

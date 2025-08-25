@@ -2,7 +2,7 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { BlogPost } from "../../types/BlogSection.type";
-
+import Fallback from '../../assets/images/error/fallback.png'
 const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -23,7 +23,8 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
       <div className="relative rounded-4xl overflow-hidden flex-shrink-0">
         {!imageLoaded && <div className="absolute inset-0 bg-gray-200 animate-pulse" />}
         <img
-          src={imageError ? "/images/error/fallback.svg" : post.image || "/placeholder.svg"}
+        
+          src={imageError ? Fallback : post.image || "/placeholder.svg"}
           alt={post.imageAlt}
           className={`w-full h-full object-cover ${imageLoaded ? "opacity-100" : "opacity-0"}`}
           onLoad={handleImageLoad}

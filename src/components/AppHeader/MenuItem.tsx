@@ -16,6 +16,7 @@ type MenuItemProps = {
   active: string | null;
   setActive: (item: string | null) => void;
   children?: React.ReactNode;
+  path: string;
 };
 
 const MenuItem: React.FC<MenuItemProps> = ({
@@ -23,9 +24,12 @@ const MenuItem: React.FC<MenuItemProps> = ({
   active,
   setActive,
   children,
+  path
 }) => {
   const hasDropdown = children && React.Children.count(children) > 0;
 
+
+  
   return (
     <div
       onMouseEnter={() => (hasDropdown ? setActive(item) : null)}
@@ -35,17 +39,17 @@ const MenuItem: React.FC<MenuItemProps> = ({
       {hasDropdown ? (
         <motion.p
           transition={transition}
-          className="cursor-pointer text-themeGray font-medium  uppercase tracking-wide  text-sm xl:text-base 2xl:text-lg  px-2 py-1 rounded-lg hover:text-themePrimary    transition-all duration-300"
+          className="cursor-pointer text-themeGray font-medium  uppercase tracking-wide  text-sm xl:text-base  px-5 lg:px-5  2xl:px-5 py-1 rounded-lg hover:text-themePrimary    transition-all duration-300"
         >
           {item}
         </motion.p>
       ) : (
-        <Link
-          to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
-          className="text-themeGray  uppercase tracking-wide font-medium  px-2 py-1 text-sm xl:text-base 2xl:text-lg rounded-lg hover:text-themePrimary   transition-all duration-300"
+        <a
+          href={path}
+          className="text-themeGray  uppercase tracking-wide font-medium  px-2 py-1 lg:px-5  2xl:px-5 text-sm xl:text-base  rounded-lg hover:text-themePrimary   transition-all duration-300"
         >
           {item}
-        </Link>
+        </a>
       )}
 
       {active === item && hasDropdown && (

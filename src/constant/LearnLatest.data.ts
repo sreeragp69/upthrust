@@ -1,4 +1,5 @@
 import type { LearnLatestData } from "../types/LearnLatest.type";
+import Student from '../assets/images/home/mobile.png'
 
 export const learnLatestData: LearnLatestData = {
   mainTitle: "Learn Latest Skills Advance Your Career",
@@ -26,7 +27,7 @@ export const learnLatestData: LearnLatestData = {
   ],
  
   illustration: {
-    src: "/images/svg/mobile.svg",
+    src: Student,
     alt: "Student with laptop illustration",
   },
 };

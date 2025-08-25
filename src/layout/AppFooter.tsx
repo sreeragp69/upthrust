@@ -52,7 +52,9 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
   // Course selection is now handled by the Select component
 
   return (
-    <div className="w-full lg:pt-[200px] xl:pt-[250px]  bg-white py-6 sm:py-8 md:py-10 lg:py-16 relative">
+    <div 
+    id="contact-us"
+    className="w-full lg:pt-[200px] xl:pt-[250px]  bg-white py-6 sm:py-8 md:py-10 lg:py-16 relative">
       <Subscribe />
       <motion.footer
         initial={{ opacity: 0 }}
@@ -91,7 +93,7 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
                     />
                   </div>
                 </div>
-                <p className="text-xs xs:text-sm sm:text-base  md:text-lg  xs:max-w-sm sm:max-w-md font-alexandria text-[#6D758F]">
+                <p className="text-xs xs:text-sm sm:text-base  md:text-base  xs:max-w-sm sm:max-w-md font-alexandria text-[#6D758F]">
                   {FOOTER_DATA.company.description}
                 </p>
               </motion.div>

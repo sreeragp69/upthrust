@@ -22,6 +22,7 @@ const NavItems = ({
             key={item.id}
             item={item.name}
             active={active}
+            path={item.path}
             setActive={setActive}
           >
             {item.isDropdown && item.dropdownList && (

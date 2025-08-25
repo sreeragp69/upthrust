@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import centreSectionImg1 from '../../assets/images/cards/centreSectionImg2.png'
+import centreSectionImg2 from '../../assets/images/cards/centreSectionImg1.png'
 
 const CentreSectionCard1 = {
-  image: "images/cards/centreSectionImg1.svg",
+  image: centreSectionImg1,
   alt: "SAGA University Indore",
 };
 const CentreSectionCard2 = {
-  image: "images/cards/centreSectionImg2.svg",
+  image: centreSectionImg2,
   alt: "Prashanti Groups of Institutes",
   title: "Prashanti Groups of Institutes, Ujjain (M.P.)",
 };
@@ -60,7 +62,7 @@ const CentreSection = () => {
 
   return (
     <motion.section
-      className=" mb-68 sm:mb-70 md:mb-70 lg:mb-50 xl:mb-40 py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20  container mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className=" mb-68 sm:mb-70 md:mb-70 lg:mb-50 xl:mb-40 py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20   mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
@@ -143,7 +145,7 @@ const CentreSection = () => {
                 <img
                   src={CentreSectionCard2.image}
                   alt={CentreSectionCard2.alt}
-                  className="w-[60%] sm:w-[55%] md:w-[30%] object-cover"
+                  className="w-[40%] sm:w-[55%] md:w-[30%] object-cover"
                 />
               </div>
 

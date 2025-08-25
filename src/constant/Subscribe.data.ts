@@ -1,3 +1,7 @@
+import user1 from '../assets/images/cards/user1.png'
+import user2 from '../assets/images/cards/user2.png'
+import user3 from '../assets/images/cards/user3.png'
+
 export const SUBSCRIBE_DATA = {
   heading: "Grow, Improve",
   subheading: "Every week on your Inbox with new tips.",
@@ -6,6 +10,6 @@ export const SUBSCRIBE_DATA = {
   stats: {
     count: "25K",
     label: "Student have already subscribed",
-    avatars: ["images/svg/user1.svg", "public/images/svg/user2.svg", "public/images/svg/user3.svg"],
+    avatars: [user1, user2, user3],
   },
 }

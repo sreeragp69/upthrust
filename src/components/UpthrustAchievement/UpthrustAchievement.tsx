@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Button from "../ui/button/Button";
 import AchievementCard from "./AchievementCard";
 import { upthrustAchievementData } from "../../constant/UpthrustAchievement.data";
 import ArrowButton from "../ui/button/ArrowButton";
+import UpthrustAchievementSkeleton from "./UpthrustAchievementSkeleton";
 const RightArrowIMg = "/images/icons/rightArrow.svg";
+import trophy from '../../assets/images/home/trophy.png'
 const UpthrustAchievement = () => {
   const { title, subtitle, description, buttonText, achievements } =
     upthrustAchievementData;
-
+const [loading, setLoading] = useState(true);
+ const [imgError, setImgError] = useState(false);
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -29,6 +32,21 @@ const UpthrustAchievement = () => {
       transition: { duration: 0.5 },
     },
   };
+  
+  
+  useEffect(() => {
+    // Simulate fetching (replace with real API/data fetching)
+    const timer = setTimeout(() => {
+      
+      setLoading(false);
+    }, 1500); // show skeleton for 1.5s
+    return () => clearTimeout(timer);
+  }, []);
+
+    if (loading) {
+    return <UpthrustAchievementSkeleton />;
+  }
+
 
   return (
     <section className="py-8 xs:py-10 sm:py-12 md:py-16 lg:py-24 bg-themeBackgroundColor overflow-hidden">
@@ -60,8 +78,9 @@ const UpthrustAchievement = () => {
                 </motion.h2>
                 <motion.img
                   className="h-16 xs:h-20 sm:h-24 md:h-28  lg:w-15 xl:h-20  "
-                  src="/images/svg/trophy.svg"
+                  src={trophy}
                   alt="Trophy"
+
                   initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
                   whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
@@ -102,7 +121,7 @@ const UpthrustAchievement = () => {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2  gap-4 xs:gap-5 w-full lg:ml-5"
+            className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2 lg:px-10  gap-4 xs:gap-5 w-full lg:ml-5"
             variants={containerVariants}
           >
             {achievements.map((achievement) => (

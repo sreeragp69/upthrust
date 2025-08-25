@@ -7,9 +7,11 @@ import HomeCard from "../../components/Landing/HomeCard";
 import HomeSwiper from "./InfiniteCards";
 import LandingCardSwiper from "./LandingCardSwiper";
 import DottedLineAnimation from "./DottedLineAnimation";
+import AvatarStack from "./AvatarStack";
+import UserFallback from '../../assets/images/error/userFallback.png';
+import dots from '../../assets/images/carosel/dots.png';
 
 const LandingPage: React.FC = () => {
-  const [loaded, setLoaded] = useState<{ [key: number]: boolean }>({});
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -23,7 +25,7 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-themeBackgroundColor mx-auto">
+    <div id="home"  className="min-h-screen bg-themeBackgroundColor mx-auto">
       <div className=" mt-10 mx-auto    flex flex-col items-center justify-center">
         <div className="relative text-center flex items-center justify-center flex-col w-full">
           {/* Mobile decorative dots only (removed gradient) */}
@@ -45,18 +47,17 @@ const LandingPage: React.FC = () => {
             >
               Job-Oriented
             </motion.h1>
-            <div className="hidden lg:flex flex-col items-center w-fit absolute uppercase  lg:right-20  xl:right-0 lg:text-2xl xl:text-3xl 2xl:text-4xl -bottom-9 font-bold right-37 lg:scale-y-90 lg:px-7 lg:py-1 lg:-rotate-3 rounded-full justify-center text-white bg-[#55B700]">
+            <div className="hidden lg:flex flex-col items-center w-fit absolute uppercase  lg:right-20  xl:right-40 lg:text-2xl xl:text-3xl 2xl:text-4xl -bottom-9 font-bold right-37 lg:scale-y-90 lg:px-7 lg:py-1 lg:-rotate-3 rounded-full justify-center text-white bg-[#55B700]">
               <h2 className="scale-y-110">Training</h2>
             </div>
           </div>
-          <div className="hidden lg:block absolute lg:right-32 top-[27%] h-16">
+          <div className="hidden lg:block absolute lg:right-32 top-[20%] xl:right-40 lg:h-20 xl:h-28">
             <img
               className="h-full w-full"
-              src="images/svg/dots.svg"
+              src={dots}
               alt="....."
             />
 
-            {/* <DottedLineAnimation/> */}
           </div>
 
           <div className="w-full flex flex-col  sm:flex-row items-center justify-center lg:hidden gap-6 mt-6 px-1.5">
@@ -82,32 +83,13 @@ const LandingPage: React.FC = () => {
               <p className="font-alexandria text-xs">20k+ Student Find Job!</p>
               <div className="flex -space-x-2">
                 {testimonialImage.map((user: { id: number; image: string }) => (
-                  <motion.div
+                  <AvatarStack
                     key={user.id}
-                    initial={{ scale: 0.5, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.4, delay: 0.2 + user.id * 0.08 }}
-                    className="relative w-7 h-7 rounded-full "
-                  >
-                    {/* Circle loader until image loads */}
-                    {!loaded[user.id] && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-gray-200 rounded-full">
-                        <div className="w-3 h-3 border-2 border-gray-400 border-t-transparent rounded-full animate-"></div>
-                      </div>
-                    )}
-
-                    {/* Avatar image */}
-                    <img
-                      src={user.image}
-                      alt={`User ${user.id}`}
-                      className={`w-full h-full rounded-full object-cover transition-opacity duration-300 ${
-                        loaded[user.id] ? "opacity-100" : "opacity-0"
-                      }`}
-                      onLoad={() =>
-                        setLoaded((prev) => ({ ...prev, [user.id]: true }))
-                      }
-                    />
-                  </motion.div>
+                    index={user.id}
+                    size={28}
+                    fallback={UserFallback}
+                    avatars={user}
+                  />
                 ))}
               </div>
             </motion.div>
@@ -123,34 +105,17 @@ const LandingPage: React.FC = () => {
           >
             <p className="font-alexandria text-xs">20k+ Student Find Job!</p>
             <div className="flex -space-x-2">
-              {testimonialImage.map((user: { id: number; image: string }) => (
-                <motion.div
-                  key={user.id}
-                  initial={{ scale: 0.5, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.4, delay: 0.2 + user.id * 0.08 }}
-                  className="relative w-7 h-7 rounded-full "
-                >
-                  {/* Circle loader until image loads */}
-                  {!loaded[user.id] && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-gray-200 rounded-full">
-                      <div className="w-3 h-3 border-2 border-gray-400 border-t-transparent rounded-full animate-"></div>
-                    </div>
-                  )}
-
-                  {/* Avatar image */}
-                  <img
-                    src={user.image}
-                    alt={`User ${user.id}`}
-                    className={`w-full h-full rounded-full object-cover transition-opacity duration-300 ${
-                      loaded[user.id] ? "opacity-100" : "opacity-0"
-                    }`}
-                    onLoad={() =>
-                      setLoaded((prev) => ({ ...prev, [user.id]: true }))
-                    }
+              {testimonialImage.map(
+                (user: { id: number; image: string }, index) => (
+                  <AvatarStack
+                    key={user.id}
+                    index={index}
+                    size={28}
+                    fallback={UserFallback}
+                    avatars={user}
                   />
-                </motion.div>
-              ))}
+                )
+              )}
             </div>
           </motion.div>
 
@@ -194,8 +159,9 @@ const LandingPage: React.FC = () => {
             backgroundImage={GAME_DEV_CARDS[0].backgroundImage}
             subtitle={GAME_DEV_CARDS[0].subtitle}
             alt={GAME_DEV_CARDS[0].alt}
-            charecterTrue={GAME_DEV_CARDS[0].charecterTrue}
+            characterTrue={GAME_DEV_CARDS[0].characterTrue}
             characterImage={GAME_DEV_CARDS[0].characterImage}
+            
             tilt="left"
           />
 
@@ -205,7 +171,7 @@ const LandingPage: React.FC = () => {
             backgroundImage={GAME_DEV_CARDS[1].backgroundImage}
             subtitle={GAME_DEV_CARDS[1].subtitle}
             alt={GAME_DEV_CARDS[1].alt}
-            charecterTrue={GAME_DEV_CARDS[1].charecterTrue}
+            characterTrue={GAME_DEV_CARDS[1].characterTrue}
             characterImage={GAME_DEV_CARDS[1].characterImage}
             tilt="none"
           />
@@ -216,11 +182,13 @@ const LandingPage: React.FC = () => {
             backgroundImage={GAME_DEV_CARDS[2].backgroundImage}
             subtitle={GAME_DEV_CARDS[2].subtitle}
             alt={GAME_DEV_CARDS[2].alt}
-            charecterTrue={GAME_DEV_CARDS[2].charecterTrue}
+            characterTrue={GAME_DEV_CARDS[2].characterTrue}
             characterImage={GAME_DEV_CARDS[2].characterImage}
+           
             tilt="right"
           />
         </motion.div>
+
 
         {/* Enhanced spacing and animation for swiper */}
         <motion.div

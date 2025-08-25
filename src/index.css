@@ -15,6 +15,7 @@
   --color-themePrimary: #135ce9 !important;
   --color-themeGray: #1c1c1c !important;
   --color-themeRed: #f4f8ff !important;
+  --color-skeletonPrimary: #a4a4a4   !important;
 
   --color-themeDisableIconColor: #5a5a5a !important;
 
@@ -331,4 +332,37 @@
 .swiper-slide-shadow-left,
 .swiper-slide-shadow-right {
   display: none !important; /* removes shadow overlays */
+}
+
+
+/* Floating particles */
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+}
+.animate-floating {
+  animation: floating 2s ease-in-out infinite;
+}
+
+/* Stroke draw animation */
+@keyframes draw {
+  0% {
+    stroke-dasharray: 0 200;
+  }
+  100% {
+    stroke-dasharray: 200 200;
+    fill: white;
+  }
+}
+.animate-draw {
+  animation: draw 1s forwards;
 }

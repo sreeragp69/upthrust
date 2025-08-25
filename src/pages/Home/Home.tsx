@@ -22,8 +22,7 @@ const Home = () => {
       <LearnLatest />
       <UpthrustAchievement />
       <TestimonialsSection />
-      <BlogSection />
-      
+      <BlogSection />  
       <CentreSection />
      
     </>

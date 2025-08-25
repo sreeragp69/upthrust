@@ -41,7 +41,7 @@ export default function LoginForm() {
       saveAuth(mockUser, mockToken);
      
 
-      // Navigate to dashboard
+      // Navigate to Home
       navigate("/");
 
       setEmail("");

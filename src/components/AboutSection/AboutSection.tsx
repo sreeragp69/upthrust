@@ -3,6 +3,10 @@ import AboutLeftContent from "./AboutLeftContent";
 
 import { useEffect, useState } from "react";
 import ImageWithFallback from "./ImageWithFallback";
+import AboutSecImg1 from '../../assets/images/about/aboutSecimg1.png'
+import AboutSecImg2 from '../../assets/images/about/aboutSecimg2.png'
+import AboutSecImg3 from '../../assets/images/about/aboutSecimg3.png'
+import AboutSecImg4 from '../../assets/images/about/aboutSecimg4.png'
 
 const AboutSection = () => {
   const [loading, setLoading] = useState(false);
@@ -38,7 +42,8 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <motion.section
+    <motion.section 
+    id="about-us"
       className="mx-auto w-full  py-8 xs:py-10 px-3 lg:px-0 sm:py-12 md:py-16 lg:py-20 overflow-hidden"
       initial="hidden"
       whileInView="visible"
@@ -62,12 +67,12 @@ const AboutSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            whileHover={{ scale: 1.02 }}
+         
             viewport={{ once: true }}
           >
             <ImageWithFallback
               className="w-full h-auto object-cover"
-              src="images/svg/aboutSecimg1.png"
+              src={AboutSecImg1}
               alt="About section main"
             />
           </motion.div>
@@ -80,12 +85,12 @@ const AboutSection = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ scale: 1.05 }}
+         
               viewport={{ once: true }}
             >
               <ImageWithFallback
                 className="w-full h-full object-cover"
-                src="images/svg/aboutSecimg2.png"
+                src={AboutSecImg2}
                 alt="About section secondary 1"
               />
             </motion.div>
@@ -94,12 +99,12 @@ const AboutSection = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              whileHover={{ scale: 1.05 }}
+          
               viewport={{ once: true }}
             >
               <ImageWithFallback
                 className="w-full h-full object-cover"
-                src="images/svg/aboutSecimg3.png"
+                  src={AboutSecImg3}
                 alt="About section secondary 2"
               />
             </motion.div>
@@ -115,13 +120,12 @@ const AboutSection = () => {
             className="w-full overflow-hidden rounded-2xl  shadow-theme-xs h-full"
             initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
             whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            whileHover={{ scale: 1.03, rotate: 1 }}
+            transition={{ duration: 0.3, delay: 0 }}
             viewport={{ once: true }}
           >
             <ImageWithFallback
               className="w-full h-full object-cover"
-              src="/images/svg/aboutSecimg4.png"
+              src={AboutSecImg4}
               alt="About section illustration"
              
             />

@@ -26,7 +26,7 @@ const LandingCardSwiper = () => {
               backgroundImage={card.backgroundImage}
               subtitle={card.subtitle}
               alt={card.alt}
-              charecterTrue={card.charecterTrue}
+              characterTrue={card.characterTrue}
               characterImage={card.characterImage}
               tilt={index === 0 ? "left" : index === 1 ? "none" : "right"} // keep your tilt logic
             />

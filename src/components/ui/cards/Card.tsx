@@ -66,17 +66,19 @@ export const CourseCard: React.FC<{ course: Course }> = ({ course }) => {
   };
 
   return (
-    <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full">
+    <div className="bg-white rounded-4xl shadow-lg overflow-hidden 2xl:rounded-[50px] transition-shadow duration-300 h-full">
       <div className="relative p-3 sm:p-4 md:p-6 rounded-lg">
         <img
           src={course.image || "/placeholder.svg"}
           alt={course.title}
-          className="w-full h-36 sm:h-48 md:h-56 lg:h-64 object-cover rounded-2xl sm:rounded-3xl"
+          className="w-full h-36 sm:h-48 md:h-56 lg:h-64 object-cover rounded-2xl sm:rounded-4xl"
         />
         <div className="absolute scale-90 bottom-2 sm:bottom-4 right-2 sm:right-6 md:right-10 bg-white rounded-xl px-2 sm:px-3 py-1 sm:py-2 ">
           <div className="flex items-center space-x-2 sm:space-x-3">
             <div className="flex flex-col">
-              <div className="text-[10px] text-gray-600 mb-0.5 sm:mb-1">Rating</div>
+              <div className="text-[10px] text-gray-600 mb-0.5 sm:mb-1">
+                Rating
+              </div>
               <div className="flex items-center  space-x-0.5">
                 {renderStars(course.rating)}
               </div>
@@ -89,10 +91,11 @@ export const CourseCard: React.FC<{ course: Course }> = ({ course }) => {
       </div>
 
       <div className="p-3 sm:p-4 md:p-6">
-        <h3 className="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-1 sm:mb-2 md:mb-3 leading-tight font-clash">
-          {course.title}
-        </h3>
-        <p className="text-[10px] sm:text-sm md:text-base text-gray-600 mb-3 sm:mb-4 md:mb-6 leading-relaxed">
+        <h3
+          className="text-sm sm:text-lg md:text-xl lg:text-3xl font-semibold text-gray-900 mb-1 sm:mb-2 md:mb-3 leading-tight font-clash"
+          dangerouslySetInnerHTML={{ __html: course.title }}
+        />
+        <p className="text-[10px] sm:text-sm md:text-base text-gray-600   mb-3 sm:mb-4 md:mb-6 ">
           {course.description}
         </p>
 
@@ -103,14 +106,18 @@ export const CourseCard: React.FC<{ course: Course }> = ({ course }) => {
           </div> */}
 
           <Button
-            className="ring-gray-500 py-2.5 px-1! lg:px-2! scale-80 md:scale-90 lg:scale-100 lg:text-[10px]! "
+            className="ring-gray-500 py-2.5 px-1! lg:px-2! scale-80 md:scale-90 lg:scale-100  "
             startIcon={
               <User className="text-themePrimary w-3 h-3 sm:w-4 sm:h-4  " />
             }
             variant="outline"
             children={`+${course.studentCount} Students`}
           />
-          <Button variant="primary" children="ENROLL" className="py-2.5 px-1! lg:px-2!  scale-80 md:scale-90 lg:scale-100 -mt-3 sm:mt-0 lg:text-[10px]! xl:text-sm" />
+          <Button
+            variant="primary"
+            children="ENROLL"
+            className="py-2.5 px-1! lg:px-2!  scale-80 md:scale-90 lg:scale-100 -mt-3 sm:mt-0 "
+          />
         </div>
       </div>
     </div>

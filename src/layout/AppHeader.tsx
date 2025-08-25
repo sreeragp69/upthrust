@@ -98,8 +98,11 @@ const AppHeader: React.FC<AppHeaderProps> = () => {
                 active={active}
               />
 
+              <div className=""></div>
+              {/* <div className=""></div> */}
+
               {/* Right Side Auth Buttons */}
-              <motion.div
+              {/* <motion.div
                 className="hidden sm:flex items-center gap-3"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -122,7 +125,7 @@ const AppHeader: React.FC<AppHeaderProps> = () => {
                     Sign up
                   </Link>
                 </motion.div>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </div>
         </div>

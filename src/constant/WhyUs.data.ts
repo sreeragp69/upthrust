@@ -1,5 +1,5 @@
 import type { WhyUsData } from "../types/WhyUs.type"
-
+import Student from '../assets/images/home/student.png'
 export const whyUsData: WhyUsData = {
   mainTitle: "Why Study with Us ?",
   subtitle:
@@ -51,7 +51,7 @@ export const whyUsData: WhyUsData = {
     },
   ],
   illustration: {
-    src: "/images/svg/student.svg",
+    src: Student,
     alt: "Student with laptop illustration",
   },
 }

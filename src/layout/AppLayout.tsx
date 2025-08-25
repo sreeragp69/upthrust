@@ -14,7 +14,7 @@ const LayoutContent: React.FC = () => {
     // Simulate loading (2 seconds)
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);

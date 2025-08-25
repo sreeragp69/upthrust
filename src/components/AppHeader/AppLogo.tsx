@@ -12,7 +12,7 @@ const AppLogo = () => {
             <img
               src="images/logo/logo.svg"
               alt="Logo"
-              className="h-10 w-auto"
+              className="h-10 lg:h-13 2xl:h-14 w-auto"
             />
           </div>
         </motion.div>
