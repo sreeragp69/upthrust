@@ -19,7 +19,7 @@ const ImageWithFallback = ({
   const [error, setError] = useState(false);
 
   return (
-    <div className={`relative w-full h-full overflow-hidden`}>
+    <div className={`relative w-full h-full overflow-hidden `}>
       {/* Show loader while image loads */}
       {loading && !error && (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-100">

@@ -33,7 +33,7 @@ const AboutSection = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setLoading;
+      setLoading(true);
     }, 1500);
 
     return () => {
@@ -63,7 +63,7 @@ const AboutSection = () => {
           className="flex flex-col h-full justify-center sm:col-span-2 md:col-span-1"
         >
           <motion.div
-            className="w-full h-full overflow-hidden rounded-2xl  shadow-theme-xs"
+            className="w-full h-full overflow-hidden rounded-3xl lg:rounded-[40px]  "
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -81,7 +81,7 @@ const AboutSection = () => {
             variants={containerVariants}
           >
             <motion.div
-              className="w-full h-full overflow-hidden rounded-2xl  shadow-theme-xs"
+              className="w-full h-full overflow-hidden rounded-3xl lg:rounded-[40px]  "
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -95,7 +95,7 @@ const AboutSection = () => {
               />
             </motion.div>
             <motion.div
-              className="w-full h-full overflow-hidden rounded-2xl  shadow-theme-xs"
+              className="w-full h-full overflow-hidden rounded-3xl lg:rounded-[40px]   "
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -117,7 +117,7 @@ const AboutSection = () => {
           className="flex items-center justify-center h-full sm:col-span-2 md:col-span-1 lg:col-span-1"
         >
           <motion.div
-            className="w-full overflow-hidden rounded-2xl  shadow-theme-xs h-full"
+            className="w-full overflow-hidden rounded-4xl   h-full"
             initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
             whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 0.3, delay: 0 }}

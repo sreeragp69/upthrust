@@ -7,14 +7,11 @@ import { HomeSwiperImages } from "../../constant/Home.data"
 const HomeSwiper: React.FC = () => {
   const [loading, setLoading] = useState(true)
 
-  // Duplicate once
   const duplicatedImages = [...HomeSwiperImages, ...HomeSwiperImages]
 
-  // Each card width + gap = 110px + 40px (gap-10 = 2.5rem = 40px)
   const itemWidth = 110 + 40
   const totalWidth = itemWidth * HomeSwiperImages.length
 
-  // simulate loading or wait for all images
   useEffect(() => {
     const imgPromises = HomeSwiperImages.map(
       (item) =>
@@ -30,10 +27,16 @@ const HomeSwiper: React.FC = () => {
   }, [])
 
   return (
-    <section className="flex w-[98vw] sm:w-[95vw] md:w-[88vw] min-[1680px]:w-[50%] mx-auto items-center justify-center overflow-hidden py-6">
+    <section className="relative flex w-[98vw] sm:w-[95vw] md:w-[88vw] xl:w-[80vw]! 2xl:w-[78vw]! min-[1920px]:w-[68vw]! min-[1680px]:w-[50%] 3xl:w-[40%]! mx-auto items-center justify-center overflow-hidden py-6">
+      
+      {/* Left fade */}
+      <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-themeBackgroundColor to-transparent pointer-events-none z-10" />
+
+      {/* Right fade */}
+      <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-themeBackgroundColor to-transparent pointer-events-none z-10" />
+
       <div className="relative w-full overflow-hidden">
         {loading ? (
-          // Skeleton loader
           <ul className="flex gap-10 animate-pulse">
             {Array.from({ length: HomeSwiperImages.length }).map((_, idx) => (
               <li
@@ -45,7 +48,6 @@ const HomeSwiper: React.FC = () => {
             ))}
           </ul>
         ) : (
-          // Scrolling lane
           <motion.ul
             className="flex gap-10"
             animate={{ x: [0, -totalWidth] }}
@@ -58,7 +60,7 @@ const HomeSwiper: React.FC = () => {
             {duplicatedImages.map((item, idx) => (
               <li
                 key={`${item.id}-${idx}`}
-                className="flex h-[110px] w-[110px] flex-shrink-0 items-center justify-center rounded-2xl bg-[#E2ECFF] "
+                className="flex h-[110px] w-[110px] flex-shrink-0 items-center justify-center rounded-2xl bg-[#E2ECFF]"
               >
                 <img
                   src={item.path}
@@ -69,8 +71,6 @@ const HomeSwiper: React.FC = () => {
             ))}
           </motion.ul>
         )}
-          {/* <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-themeBackgroundColor/90 via-transparent to-themeBackgroundColor"></div> */}
-
       </div>
     </section>
   )

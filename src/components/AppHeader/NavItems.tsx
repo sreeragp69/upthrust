@@ -31,9 +31,7 @@ const NavItems = ({
                   <CourseItem
                     key={index}
                     title={course.courseName}
-                    href={`/courses/${course.courseName
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")}`}
+                    href={`/`}
                     src={course.courseImg}
                     description={course.description}
                   />

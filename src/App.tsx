@@ -72,9 +72,9 @@ export default function App() {
         <ScrollToTop />
         <Routes>
           {/* Auth Routes */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/unauthorized" element={<Unauthorized />} />
+          {/* <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} /> */}
+          {/* <Route path="/unauthorized" element={<Unauthorized />} /> */}
 
           {/* Protected Routes */}
           <Route

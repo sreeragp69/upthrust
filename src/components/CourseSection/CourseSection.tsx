@@ -189,7 +189,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
 
         {/* Swiper Slider */}
         <motion.div 
-          className="relative w-[82vw] sm:w-[90vw] md:w-[90vw] min-[1680px]:w-[90%] mx-auto px-4 py-7 overflow-hidden"
+          className="relative w-[82vw] sm:w-[90vw] md:w-[90vw] xl:w-[80vw]! 2xl:w-[78vw]! min-[1920px]:w-[68vw]! min-[1680px]:w-[50%] 3xl:w-[40%]! mx-auto px-4 py-7 overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

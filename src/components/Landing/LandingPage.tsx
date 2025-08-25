@@ -25,7 +25,7 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div id="home"  className="min-h-screen bg-themeBackgroundColor mx-auto">
+    <div id="home"  className=" bg-themeBackgroundColor mx-auto">
       <div className=" mt-10 mx-auto    flex flex-col items-center justify-center">
         <div className="relative text-center flex items-center justify-center flex-col w-full">
           {/* Mobile decorative dots only (removed gradient) */}
