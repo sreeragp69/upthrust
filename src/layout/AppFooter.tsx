@@ -89,7 +89,7 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
                     <img
                       src={FOOTER_DATA.company.img}
                       alt={FOOTER_DATA.company.alt}
-                      className="h-8 sm:h-10 md:h-12 w-auto"
+                      className="h-8 sm:h-10 md:h-12  w-auto"
                     />
                   </div>
                 </div>
@@ -123,7 +123,7 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
               </div>
 
               {/* Contact */}
-              <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
+              <div className="space-y-3 sm:space-y-4 text-center sm:text-left ">
                 <h4 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">
                   Contact
                 </h4>
@@ -159,7 +159,7 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-4 w-full">
+          <div className="lg:col-span-4 w-full ml-10 lg:scale-90">
             <Form
               heading="Any Enquires"
               onSubmit={handleSubmit}

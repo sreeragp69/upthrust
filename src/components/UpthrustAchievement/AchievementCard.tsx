@@ -17,11 +17,13 @@ const AchievementCard: React.FC<Omit<AchievementCardProps, "id">> = ({
       viewport={{ once: true }}
        whileHover={{ y: -2, transition: { duration: 0.2 } }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="relative bg-white rounded-3xl p-5 xs:p-6 hover:shadow-lg hover:shadow-gray-100  sm:p-8 md:p-9 flex flex-col items-start w-full h-full"
+      className="relative bg-white rounded-3xl p-5 xs:p-6 hover:shadow-lg hover:shadow-gray-100  md:p-7 flex flex-col items-start w-full h-full"
     >
       {/* Top small image */}
       <motion.div
-        className="w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 md:w-20 md:h-20"
+       
+        className=" w-full h-40"
+        
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.3 }}
@@ -29,12 +31,12 @@ const AchievementCard: React.FC<Omit<AchievementCardProps, "id">> = ({
         <img
           src={imageSrc}
           alt="achievement icon"
-          className="w-full h-full object-cover "
+          className="w-full h-full rounded-3xl object-cover object-center"
         />
       </motion.div>
 
       {/* Spacing for the image */}
-      <div className="mt-4 xs:mt-5 sm:mt-6 md:mt-8"></div>
+      <div className="mt-4 xs:mt-5 "></div>
 
       {/* Title */}
       <motion.h3
@@ -51,7 +53,7 @@ const AchievementCard: React.FC<Omit<AchievementCardProps, "id">> = ({
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.5 }}
-        className="text-xs xs:text-sm leading-4 xs:leading-5 text-[#6D758F] font-alexandria"
+        className="text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base leading-relaxed lg:leading-snug  font-alexandria text-[#6D758F]"
       >
         {description}
       </motion.p>

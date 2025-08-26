@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router";
 
 const transition = {
   type: "spring" as const,
@@ -16,7 +15,7 @@ type MenuItemProps = {
   active: string | null;
   setActive: (item: string | null) => void;
   children?: React.ReactNode;
-  path: string;
+  path: string; // can be "#about" or "/services"
 };
 
 const MenuItem: React.FC<MenuItemProps> = ({
@@ -24,12 +23,21 @@ const MenuItem: React.FC<MenuItemProps> = ({
   active,
   setActive,
   children,
-  path
+  path,
 }) => {
   const hasDropdown = children && React.Children.count(children) > 0;
 
+  const handleScroll = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const yOffset = -80; // adjust if you have a sticky navbar
+      const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
 
-  
+  const isHashLink = path.startsWith("#");
+
   return (
     <div
       onMouseEnter={() => (hasDropdown ? setActive(item) : null)}
@@ -39,25 +47,33 @@ const MenuItem: React.FC<MenuItemProps> = ({
       {hasDropdown ? (
         <motion.p
           transition={transition}
-          className="cursor-pointer text-themeGray font-medium  uppercase tracking-wide  text-sm xl:text-base  px-5 lg:px-5  2xl:px-5 py-1 rounded-lg hover:text-themePrimary    transition-all duration-300"
+          className="cursor-pointer text-themeGray font-medium uppercase tracking-wide text-sm xl:text-base px-5 py-1 rounded-lg hover:text-themePrimary transition-all duration-300"
         >
           {item}
         </motion.p>
+      ) : isHashLink ? (
+        <button
+          onClick={() => handleScroll(path.replace("#", ""))}
+          className="text-themeGray uppercase tracking-wide font-medium px-2 py-1 lg:px-5 2xl:px-5 text-sm xl:text-base rounded-lg hover:text-themePrimary transition-all duration-300"
+        >
+          {item}
+        </button>
       ) : (
         <a
           href={path}
-          className="text-themeGray  uppercase tracking-wide font-medium  px-2 py-1 lg:px-5  2xl:px-5 text-sm xl:text-base  rounded-lg hover:text-themePrimary   transition-all duration-300"
+          className="text-themeGray uppercase tracking-wide font-medium px-2 py-1 lg:px-5 2xl:px-5 text-sm xl:text-base rounded-lg hover:text-themePrimary transition-all duration-300"
         >
           {item}
         </a>
       )}
 
+      {/* Dropdown */}
       {active === item && hasDropdown && (
         <div className="absolute top-[calc(100%+1rem)] left-1/2 -translate-x-1/2 pt-4 z-50">
           <div className="absolute -top-4 left-0 right-0 h-4 bg-transparent" />
           <div
-            className="bg-white  backdrop-blur-x rounded-2xl overflow-hidden 
-                 border border-white/30  shadow-2xl shadow-blue-500/10"
+            className="bg-white backdrop-blur-xl rounded-2xl overflow-hidden 
+              border border-white/30 shadow-2xl shadow-blue-500/10"
             onMouseEnter={() => setActive(item)}
             onMouseLeave={() => setActive(null)}
           >
@@ -66,7 +82,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 8 }}
               transition={transition}
-              className="w-max h-full  space-y-1"
+              className="w-max h-full space-y-1"
             >
               {children}
             </motion.div>

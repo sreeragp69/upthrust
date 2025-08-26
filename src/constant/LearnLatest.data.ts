@@ -1,33 +1,33 @@
-import type { LearnLatestData } from "../types/LearnLatest.type";
-import Student from '../assets/images/home/mobile.png'
+  import type { LearnLatestData } from "../types/LearnLatest.type";
+import learnlatest from '../assets/images/home/learnlatest.png'
 
 export const learnLatestData: LearnLatestData = {
   mainTitle: "Learn Latest Skills Advance Your Career",
   subtitle:
-    "With our experience of 11 years in Digital Marketing training and Game Development, With our experience of 11 years in Digital Marketing training .",
+    "Stay ahead of the curve with Certification Courses designed around emerging technologies and in-demand skills. We prepare you for the next phase of Digital opportunities with hands-on, career-driven learning.",
   features: [
     {
-      id: "world-class-teachers",
-      title: "World Class Teachers",
+      id: "future-ready-technologies",
+      title: "Future Ready technologies",
       description:
-        "With our experience of 11 years in Digital Marketing training and Game Development. With our experience of 11 years in Digital Marketing training.",
+        "Explore the world of Metaverse with AR and VR development designed to match the industry’s next phase.",
     },
     {
-      id: "global-community",
-      title: "Global Community",
+      id: "creative-3d-and-animation",
+      title: "Creative 3D and Animation",
       description:
-        "With our experience of 11 years in Digital Marketing training and Game Development. With our experience of 11 years in Digital Marketing training.",
+        "Master the art of 3D Modelling, 3D Texturing, 3D Sculpting, and Rigging with tools like Blender, Maya and ZBrush to bring ideas to life.",
     },
     {
-      id: "top-notch-courses",
-      title: "Top Notch Courses",
+      id: "Career-focused-learning",
+      title: "Career-focused learning",
       description:
-        "With our experience of 11 years in Digital Marketing training and Game Development. With our experience of 11 years in Digital Marketing training.",
+        "For the design enthusiasts, build your career with 3D animation and VFX courses tailored specifically for students and professionals alike. Apart from this individuals will be getting internship & placement opportunities from The Upthrust.",
     },
   ],
  
   illustration: {
-    src: Student,
+    src: learnlatest,
     alt: "Student with laptop illustration",
   },
 };

@@ -67,6 +67,7 @@ const [loading, setLoading] = useState(true);
               className="flex flex-col items-start space-y-3 xs:space-y-4"
               variants={itemVariants}
             >
+              
               <div className="flex items-baseline flex-wrap gap-2">
                 <motion.h2
                   className="text-xl sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl leading-8 font-bold text-gray-900 "
@@ -96,7 +97,7 @@ const [loading, setLoading] = useState(true);
                 {subtitle}
               </motion.h1>
               <motion.p
-                className="text-xs xs:text-sm sm:text-base  md:text-lg max-w-xs xs:max-w-sm sm:max-w-md font-alexandria text-[#6D758F]"
+                className="text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base leading-relaxed lg:leading-snug xl:leading-relaxed font-alexandria text-[#6D758F]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}

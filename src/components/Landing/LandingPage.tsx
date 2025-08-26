@@ -8,11 +8,10 @@ import HomeSwiper from "./InfiniteCards";
 import LandingCardSwiper from "./LandingCardSwiper";
 import DottedLineAnimation from "./DottedLineAnimation";
 import AvatarStack from "./AvatarStack";
-import UserFallback from '../../assets/images/error/userFallback.png';
-import dots from '../../assets/images/carosel/dots.png';
+import UserFallback from "../../assets/images/error/userFallback.png";
+import dots from "../../assets/images/carosel/dots.png";
 
 const LandingPage: React.FC = () => {
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -25,7 +24,7 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div id="home"  className=" bg-themeBackgroundColor mx-auto">
+    <div id="home" className=" bg-themeBackgroundColor mx-auto">
       <div className=" mt-10 mx-auto    flex flex-col items-center justify-center">
         <div className="relative text-center flex items-center justify-center flex-col w-full">
           {/* Mobile decorative dots only (removed gradient) */}
@@ -52,12 +51,7 @@ const LandingPage: React.FC = () => {
             </div>
           </div>
           <div className="hidden lg:block absolute lg:right-32 top-[20%] xl:right-40 lg:h-20 xl:h-28">
-            <img
-              className="h-full w-full"
-              src={dots}
-              alt="....."
-            />
-
+            <img className="h-full w-full" src={dots} alt="....." />
           </div>
 
           <div className="w-full flex flex-col  sm:flex-row items-center justify-center lg:hidden gap-6 mt-6 px-1.5">
@@ -126,20 +120,22 @@ const LandingPage: React.FC = () => {
             className="text-center md:text-center font-alexandria text-[#727272] flex justify-center flex-col items-center mt-10 md:mt-20"
           >
             <p className="w-[86%] mb-3 lg:mb-0 md:w-[66%]">
-              We empower aspiring creators and digital professionals with
-              hands-on training, cutting-edge tools, and a collaborative
-              community to bridge the gap between learning and real-world
-              experience.
+              At 
+              <span className="ml-6 lg:ml-0 text-themePrimary font-bold">
+                {" "}The 
+                Upthrust
+              </span>
+              , we believe learning should go beyond theory. Our certification
+              courses in Game Development and Design, Digital Marketing, Web and
+              App Development, and UI/UX are built to provide practical skills,
+              industry insights and confidence to create something impactful.
             </p>
             <p className="w-[80%] md:w-[80%]">
-              Ready to become a confident, future-ready expert in Game
-              Development, Digital Marketing, or Web & App Development? Learn,
-              build, and grow with
-              <span className="ml-6 lg:ml-0 text-themePrimary font-bold">
-                {" "}
-                THE UPTHRUST
-              </span>{" "}
-              — where skills meet opportunity.
+              Whether you want to Design Games, master Digital Marketing or
+              build powerful Apps and Websites. We provide the right guidance,
+              tools and mentorship to help you grow. Join a community where
+              creativity meets technology and turn your future into a Job ready
+              career.
             </p>
           </motion.div>
         </div>
@@ -161,7 +157,6 @@ const LandingPage: React.FC = () => {
             alt={GAME_DEV_CARDS[0].alt}
             characterTrue={GAME_DEV_CARDS[0].characterTrue}
             characterImage={GAME_DEV_CARDS[0].characterImage}
-            
             tilt="left"
           />
 
@@ -184,11 +179,9 @@ const LandingPage: React.FC = () => {
             alt={GAME_DEV_CARDS[2].alt}
             characterTrue={GAME_DEV_CARDS[2].characterTrue}
             characterImage={GAME_DEV_CARDS[2].characterImage}
-           
             tilt="right"
           />
         </motion.div>
-
 
         {/* Enhanced spacing and animation for swiper */}
         <motion.div

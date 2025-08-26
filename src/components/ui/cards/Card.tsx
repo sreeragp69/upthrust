@@ -90,7 +90,7 @@ export const CourseCard: React.FC<{ course: Course }> = ({ course }) => {
         </div>
       </div>
 
-      <div className="p-3 sm:p-4 md:p-6">
+      <div className="p-3 sm:p-4 md:p-6  flex flex-col justify-between ">
         <h3
           className="text-sm sm:text-lg md:text-xl lg:text-3xl font-semibold text-gray-900 mb-1 sm:mb-2 md:mb-3 leading-tight font-clash"
           dangerouslySetInnerHTML={{ __html: course.title }}
@@ -99,7 +99,7 @@ export const CourseCard: React.FC<{ course: Course }> = ({ course }) => {
           {course.description}
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-4 lg:gap-2 xl:gap-6">
+        <div className="grid grid-cols-1 end-0 sm:grid-cols-2 gap-4 sm:gap-4 lg:gap-2 xl:gap-6">
           {/* <div className="flex items-center space-x-1 sm:space-x-2 text-gray-500">
             <User className="w-3 h-3 sm:w-4 sm:h-4" />
             <span className="text-xs sm:text-sm">+{course.studentCount} Students</span>

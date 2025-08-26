@@ -67,7 +67,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
             </>
           ) : (
             posts.slice(0, 4).map((post) => (
-              <div key={post.id} className="break-inside-avoid mb-6">
+              <div key={post.id} className="break-inside-avoid mb-2">
                 <BlogCard post={post} />
               </div>
             ))

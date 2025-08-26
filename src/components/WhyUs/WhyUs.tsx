@@ -94,7 +94,7 @@ const WhyUs: React.FC = () => {
       <div className=" mx-auto  ">
         {/* Header */}
         <motion.div
-          className="text-center sm:text-start mb-8 lg:mb-12"
+          className="text-center sm:text-start mb-8 lg:mb-12 "
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -103,7 +103,7 @@ const WhyUs: React.FC = () => {
           <h2 className="text-xl sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl leading-8 font-bold text-gray-900 mb-4">
             {data.mainTitle}
           </h2>
-          <p className="text-[#6D758F] text-xs md:text-sm lg:text-base xl:text-base 2xl:text-lg tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria w-full sm:w-2/3 lg:w-1/2 xl:w-1/3 mx-auto sm:mx-0">
+          <p className="text-[#6D758F] text-xs md:text-sm lg:text-base xl:text-base 2xl:text-lg tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria w-full sm:w-2/3 lg:w-1/2 xl:w-[40%] mx-auto sm:mx-0">
             {data.subtitle}
           </p>
         </motion.div>

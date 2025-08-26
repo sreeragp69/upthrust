@@ -70,10 +70,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-40 xs:w-40 sm:w-52 sm:h-52 md:w-60 md:h-60"
+              className="absolute top-1/2 left-1/2 transform rounded-2xl lg:rounded-[40px] p-2 bg-white  -translate-x-1/2 -translate-y-1/2 w-32 h-40 xs:w-40 sm:w-52 sm:h-52 md:w-48 md:h-60"
             >
               {personImageLoading && (
-                <div className="w-full h-full bg-gray-300 rounded-2xl animate-pulse flex items-center justify-center">
+                <div className="w-full h-full bg-gray-300 rounded-2xl lg:rounded-4xl animate-pulse flex items-center justify-center">
                   <div className="w-6 h-6 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
                 </div>
               )}
@@ -84,7 +84,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                     : testimonial.image || "/placeholder.svg"
                 }
                 alt={testimonial.name}
-                className={`w-full h-full object-contain rounded-2xl ${
+                className={`w-full h-full object-cover rounded-2xl lg:rounded-4xl${
                   personImageLoading ? "hidden" : ""
                 }`}
                 loading="lazy"
@@ -146,7 +146,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
               {testimonial.name}
             </h3>
             <p className="text-gray-500 text-xs xs:text-sm sm:text-base">
-              ({testimonial.designation})
+              {testimonial.designation}
             </p>
           </motion.div>
         </motion.div>

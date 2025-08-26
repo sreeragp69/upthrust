@@ -23,7 +23,7 @@ export const FOOTER_DATA = {
   contact: {
     phone: "+91 93997 86885",
     address: {
-      line1: "10/2, 2nd Floor, Shree",
+      line1: "10/2, 1nd Floor, Shree",
       line2: "Mahadeo House, near Hotel",
       line3: "Surya, South Tukoganj, Indore, (M.P.) 452001",
     },

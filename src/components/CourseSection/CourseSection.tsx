@@ -14,7 +14,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [swiper, setSwiper] = useState<any>(null);
   const [slidesPerView, setSlidesPerView] = useState(3);
-  
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -22,18 +22,18 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      },
+    },
   };
-  
+
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.5 }
-    }
+      transition: { duration: 0.5 },
+    },
   };
 
   useEffect(() => {
@@ -56,8 +56,6 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
 
   const displaySlide = currentSlide + 1;
   const displayTotal = totalSlides;
-
-
 
   const handleNextSlide = () => {
     if (swiper) {
@@ -96,15 +94,15 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
   }
 
   return (
-    <motion.section 
-    id="courses"
+    <motion.section
+      id="courses"
       className="px-3 lg:p-0 bg-themeBackgroundColor"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <motion.div 
+      <motion.div
         className=" mx-auto"
         variants={containerVariants}
         initial="hidden"
@@ -112,14 +110,14 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
         viewport={{ once: true, margin: "-50px" }}
       >
         {/* Header */}
-        <motion.div 
+        <motion.div
           className="flex flex-col gap-3 xl:gap-5 items-start mb-7"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-themeGray font-bold text-xl sm:text-xl md:text-2xl 2xl:text-4xl  leading-8"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -127,30 +125,29 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
           >
             {courseSectionData.title}
           </motion.h2>
-          <motion.p 
-            className="text-[#6D758F] text-xs xl:text-base 2xl:text-base tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria  w-full sm:w-2/3 md:w-1/2 lg:w-[30%]"
+          <motion.p
+            className="text-[#6D758F] text-xs xl:text-base 2xl:text-base tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria w-full sm:w-2/3 md:w-1/2 lg:w-[30%]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            {courseSectionData.subtitle}
-          </motion.p>
+            dangerouslySetInnerHTML={{ __html: courseSectionData.subtitle }}
+          />
         </motion.div>
 
         {/* Navigation Controls */}
-        <motion.div 
+        <motion.div
           className="flex items-center justify-between mb-8"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <motion.div 
+          <motion.div
             className="flex items-center space-x-2 text-gray-500"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <motion.span 
+            <motion.span
               className="text-base sm:text-lg lg:text-lg font-alexandria xl:text-xl 2xl:text-xl font-medium"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -169,7 +166,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
             />
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="flex space-x-2"
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -188,7 +185,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
         </motion.div>
 
         {/* Swiper Slider */}
-        <motion.div 
+        <motion.div
           className="relative w-[82vw] sm:w-[90vw] md:w-[90vw] xl:w-[80vw]! 2xl:w-[78vw]! min-[1920px]:w-[68vw]! min-[1680px]:w-[50%] 3xl:w-[40%]! mx-auto px-4 py-7 overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -196,15 +193,15 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
           transition={{ duration: 0.7, delay: 0.4 }}
         >
           <Swiper
-            modules={[FreeMode,Navigation, Pagination]}
+            modules={[FreeMode, Navigation, Pagination]}
             spaceBetween={16}
             slidesPerView={1}
-            loop={true}
+            loop={false}
             onSwiper={setSwiper}
             onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)}
             className="course-swiper scale-110 md:scale-100"
-            // pagination={{ clickable: true }}  
-            
+            // pagination={{ clickable: true }}
+
             breakpoints={{
               320: {
                 slidesPerView: 1,

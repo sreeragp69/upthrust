@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import centreSectionImg1 from '../../assets/images/cards/centreSectionImg2.png'
-import centreSectionImg2 from '../../assets/images/cards/centreSectionImg1.png'
+import centreSectionImg1 from "../../assets/images/cards/centreSectionImg2.png";
+import centreSectionImg2 from "../../assets/images/cards/centreSectionImg1.png";
 
 const CentreSectionCard1 = {
   image: centreSectionImg1,
@@ -72,10 +72,10 @@ const CentreSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <motion.div
-            className="flex flex-col items-start space-y-3 sm:space-y-4 md:space-y-5 text-center lg:text-left "
+            className="flex flex-col items-start space-y-1   text-center lg:text-left "
             variants={itemVariants}
           >
-            <div className="flex items-baseline flex-wrap gap-2 justify-center lg:justify-start">
+            <div className="flex items-baseline flex-wrap gap-1 justify-center lg:justify-start">
               <motion.h2
                 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900"
                 initial={{ opacity: 0, x: -20 }}
@@ -94,14 +94,17 @@ const CentreSection = () => {
               Innovation
             </motion.h1>
             <motion.p
-              className="text-sm sm:text-base justify-start text-start md:text-lg lg:text-xl  max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg font-alexandria text-[#6D758F] leading-relaxed "
+              className="text-sm sm:text-base justify-start text-start md:text-lg  max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg font-alexandria text-[#6D758F] leading-relaxed "
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              With our experience of 11 years in Digital Marketing training and
-              Game Development, With our experience of 11 years in Digital
-              Marketing training.
+              We have established “Centres of Excellence” at some of the leading
+              universities of Madhya Pradhesh. <br/> Each centre is designed to nurture talent, foster
+              collaboration and bring bold ideas to life. From game development
+              to digital marketing we provide an ecosystem that encourages
+              experimentation and excellence. These hubs empower learners and
+              professionals to shape the future of digital innovation.
             </motion.p>
           </motion.div>
 
@@ -127,9 +130,7 @@ const CentreSection = () => {
                 />
               </div>
 
-              <p className="text-sm sm:text-base md:text-lg  lg:text-xl font-bold text-center text-gray-700">
-              
-              </p>
+              <p className="text-sm sm:text-base md:text-lg  lg:text-xl font-bold text-center text-gray-700"></p>
             </motion.div>
 
             <motion.div

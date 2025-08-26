@@ -99,7 +99,7 @@ const AppHeader: React.FC<AppHeaderProps> = () => {
               />
 
               <div className=""></div>
-              {/* <div className=""></div> */}
+            {/* <div className=""></div> */}
 
               {/* Right Side Auth Buttons */}
               {/* <motion.div

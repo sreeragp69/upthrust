@@ -2,8 +2,7 @@ import { m, motion } from "framer-motion";
 import React from "react";
 import Button from "../ui/button/Button";
 import HoverButton from "../ui/button/HoverButton";
-import RightArrowIMg from '../../assets/images/button/Pattern.svg'
-
+import RightArrowIMg from "../../assets/images/button/Pattern.svg";
 
 interface AboutLeftContentProps {
   itemVariants: any;
@@ -28,12 +27,12 @@ const AboutLeftContent = ({ itemVariants }: AboutLeftContentProps) => {
           About The Upthrust
         </motion.h2>
         <motion.h1
-          className="text-themeGray font-bold text-xl sm:text-xl md:text-2xl 2xl:text-4xl leading-8"
+          className="text-themeGray font-bold text-xl sm:text-xl md:text-2xl 2xl:text-4xl leading-9"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          Aims to provide Result-Oriented Training!!
+          Result-Oriented Training, Backed <br /> by Experience!
         </motion.h1>
         <motion.p
           className="text-[#6D758F] text-xs xl:text-base 2xl:text-base tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria"
@@ -41,11 +40,19 @@ const AboutLeftContent = ({ itemVariants }: AboutLeftContentProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          With our experience of 11 years in Digital Marketing training and Game
-          Development, With our experience of 11 years in Digital Marketing
-          training. With our experience of 11 years in Digital Marketing
-          training and Game Development, With our experience of 11 years in
-          Digital Marketing training.
+          At The Upthrust, we bring over 14 years of expertise in defining the
+          career trajectory of students with Game Development and
+          Digital Marketing courses. Our focus has always been on delivering
+          practical learning that backs students when they face real-world
+          challenges. Industry training & internships are the two most valuable
+          factors that make The Upthrust a unique choice among career
+          enthusiasts.
+          <br />
+          We don’t just teach, we mentor, guide and provide hands-on exposure
+          to ensure that every learner can confidently apply their skills in
+          this cut-throat competitive world. From Game Design and Digital
+          Marketing to Mobile App and Web Development, our certification courses
+          are designed to help you grow and succeed.
         </motion.p>
 
         <motion.div
@@ -55,7 +62,6 @@ const AboutLeftContent = ({ itemVariants }: AboutLeftContentProps) => {
         >
           <HoverButton
             children="More About"
-           
             className=" px-4!  scale-90 md:scale-95 -ml-2 lg:ml-0 lg:scale-100 text-xs!"
             endIcon={<RightArrowIcon />}
           />

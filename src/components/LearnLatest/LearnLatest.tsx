@@ -14,6 +14,7 @@ import Content from "../ui/Content/Content";
 import MobileSkeleton from "./MobileSkeleton";
 const RightArrowIMg = "/images/icons/rightArrow.svg";
 import Fallback from '../../assets/images/error/fallback.png'
+import learnlatest from '../../assets/images/home/learnlatest.png'
 // Loading skeleton components
 const FeatureSkeleton = () => (
   <div className="animate-pulse rounded-2xl p-4 sm:p-5 md:p-6">
@@ -128,7 +129,7 @@ if (isLoading) {
               {data.mainTitle}
             </motion.h2>
             <motion.p
-              className="text-[#6D758F] text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base leading-relaxed lg:leading-snug xl:leading-relaxed font-alexandria"
+              className="text-[#6D758F] text-xs md:text-sm  lg:text-sm xl:text-base 2xl:text-base leading-relaxed lg:leading-snug xl:leading-relaxed font-alexandria"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -174,7 +175,7 @@ if (isLoading) {
                 {data.mainTitle}
               </motion.h2>
               <motion.p
-                className="text-[#6D758F] text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base leading-relaxed lg:leading-snug xl:leading-relaxed font-alexandria w-full lg:w-3/4"
+                className="text-[#6D758F] text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base leading-relaxed lg:leading-snug xl:leading-relaxed font-alexandria w-full lg:w-[85%]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}

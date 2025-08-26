@@ -45,7 +45,7 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
           <h3 className="text-xl sm:text-xl md:text-xl lg:text-2xl 2xl:text-3xl leading-8 font-bold text-gray-900 mb-1 lg:mb-4">
             {post.title}
           </h3>
-          <p className="text-[#6D758F] text-xs md:text-sm lg:text-sm xl:text-base  tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria line-clamp-3">
+          <p className="text-[#6D758F] text-xs md:text-sm lg:text-sm xl:text-base  tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria line-clamp-2">
             {post.description}
           </p>
         </div>

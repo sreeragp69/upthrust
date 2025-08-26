@@ -3,7 +3,7 @@ import AboutLeftContent from "./AboutLeftContent";
 
 import { useEffect, useState } from "react";
 import ImageWithFallback from "./ImageWithFallback";
-import AboutSecImg1 from '../../assets/images/about/aboutSecimg1.png'
+import AboutSecImg1 from '../../assets/images/about/aboutSecimg1.jpeg'
 import AboutSecImg2 from '../../assets/images/about/aboutSecimg2.png'
 import AboutSecImg3 from '../../assets/images/about/aboutSecimg3.png'
 import AboutSecImg4 from '../../assets/images/about/aboutSecimg4.png'
