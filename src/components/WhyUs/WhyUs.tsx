@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { whyUsData } from "../../constant/WhyUs.data";
 import { WhyUsData } from "../../types/WhyUs.type";
-import Fallback from '../../assets/images/error/fallback.png'
+import Fallback from "../../assets/images/error/fallback.png";
 
 import Content from "../ui/Content/Content";
 import StatisticCard from "./StatisticCard";
@@ -15,7 +15,6 @@ import {
 } from "./WhyUsSkeleton";
 import ContentSkeleton from "../ui/skeletons/ContentSkeleton";
 
-
 const WhyUs: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<WhyUsData | null>(null);
@@ -24,7 +23,10 @@ const WhyUs: React.FC = () => {
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.3 } },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+    },
   };
 
   const itemVariants = {
@@ -40,7 +42,7 @@ const WhyUs: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
- if (isLoading) {
+  if (isLoading) {
     return (
       <section className="py-12">
         <div className=" mx-auto px-4">
@@ -86,7 +88,6 @@ const WhyUs: React.FC = () => {
     );
   }
 
-
   if (!data) return null;
 
   return (
@@ -94,7 +95,7 @@ const WhyUs: React.FC = () => {
       <div className=" mx-auto  ">
         {/* Header */}
         <motion.div
-          className="text-center sm:text-start mb-8 lg:mb-12 "
+          className="text-center sm:text-start  "
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -103,7 +104,7 @@ const WhyUs: React.FC = () => {
           <h2 className="text-xl sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl leading-8 font-bold text-gray-900 mb-4">
             {data.mainTitle}
           </h2>
-          <p className="text-[#6D758F] text-xs md:text-sm lg:text-base xl:text-base 2xl:text-lg tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria w-full sm:w-2/3 lg:w-1/2 xl:w-[40%] mx-auto sm:mx-0">
+          <p className="text-lightGray text-xs lg:text-[16px] xl:text-sm 2xl:text-sm  tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria w-full sm:w-2/3 lg:w-1/2 xl:w-[45%] mx-auto sm:mx-0">
             {data.subtitle}
           </p>
         </motion.div>
@@ -127,10 +128,10 @@ const WhyUs: React.FC = () => {
 
           {/* Illustration */}
           <motion.div
-            className="lg:col-span-6 flex justify-center order-first lg:order-none mb-8 lg:mb-0"
+            className="lg:col-span-6 flex justify-center order-first lg:order-none mb-8 lg:mb-0 lg:-mt-10 xl:-mt-28"
             variants={itemVariants}
           >
-            <div className="relative w-full max-w-xs sm:max-w-s  mx-auto">
+            <div className="relative w-full max-w-xs sm:max-w-s lg:max-w-md xl:max-w-lg mx-auto">
               <motion.img
                 src={imgError ? Fallback : data.illustration.src}
                 alt={data.illustration.alt}
@@ -140,7 +141,7 @@ const WhyUs: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                whileHover={{ scale: 1.05, rotate: 2 }}
+                whileHover={{ scale: 1.05 }}
               />
               <motion.div
                 className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-24 h-24 lg:w-32 lg:h-32 bg-black/40 rounded-full blur-lg -z-10"
@@ -152,7 +153,10 @@ const WhyUs: React.FC = () => {
           </motion.div>
 
           {/* Right Features + Stats */}
-          <motion.div className="lg:col-span-3 lg:w-[110%] lg:-ml-14" variants={itemVariants}>
+          <motion.div
+            className="lg:col-span-3 lg:w-[110%] lg:-ml-14"
+            variants={itemVariants}
+          >
             <div className="space-y-6">
               {/* Features (Mobile/Tablet) */}
               <div className="lg:hidden space-y-4">

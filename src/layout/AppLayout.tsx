@@ -31,14 +31,12 @@ const LayoutContent: React.FC = () => {
       <div className="flex-1  bg-themeBackgroundColor transition-all duration-300 ease-in-out">
         {loading ? <AppHeaderSkeleton /> : <AppHeader />}
 
-        <div className="p-2 md:p-6 bg-themeBackgroundColor  sm:p-4 pb-0! mx-auto max-w-(--breakpoint-2xl)">
+        <div className="p-2 md:p-6 bg-themeBackgroundColor  overflow-hidden sm:p-4 pb-0! mx-auto max-w-(--breakpoint-2xl) 2xl:max-w-(--breakpoint-2xl) 4xl:max-w-(--breakpoint-3xl)">
           <Outlet />
         </div>
 
         <AppFooter />
       </div>
-
-      
     </div>
   );
 };

@@ -66,7 +66,7 @@ export const CourseCard: React.FC<{ course: Course }> = ({ course }) => {
   };
 
   return (
-    <div className="bg-white rounded-4xl shadow-lg overflow-hidden 2xl:rounded-[50px] transition-shadow duration-300 h-full">
+    <div className="bg-white rounded-4xl shadow-lg overflow-hidden 2xl:rounded-[50px] transition-shadow duration-300 h-full m-4 md:m-0">
       <div className="relative p-3 sm:p-4 md:p-6 rounded-lg">
         <img
           src={course.image || "/placeholder.svg"}

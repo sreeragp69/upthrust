@@ -20,6 +20,7 @@
   --color-themeDisableIconColor: #5a5a5a !important;
 
   --color-themeBorderColor: #ffffff !important;
+  --color-lightGray: #6D758F !important;
 
   --color-themeBlueLight: #c9ddef !important;
   --color-themeBlue: #3a648a !important;
@@ -45,6 +46,8 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1400px;
+  --breakpoint-3xl: 1600px;
+  --breakpoint-4xl: 2000px;
 
   --text-title-2xl: 72px;
   --text-title-2xl--line-height: 90px;
@@ -191,6 +194,17 @@
   --z-index-9999: 9999;
   --z-index-99999: 99999;
   --z-index-999999: 999999;
+}
+
+ 
+@theme inline {
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+ 
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
 }
 
 

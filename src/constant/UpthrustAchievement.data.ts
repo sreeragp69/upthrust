@@ -10,7 +10,7 @@ export const upthrustAchievementData: UpthrustAchievementProps = {
     {
       id: '1',
       title: 'Centre of Innovation at Sage University',
-      description: 'The integrative approach fosters connections across subjects. We are starting a Centre of Innovation with Sage University, Indore to help students explore technologies, develop practical skills and transform creative ideas into reality.',
+      description: 'The integrative approach fosters connections across subjects. We are starting a Centre of Innovation with Sage University at Indore to help students  develop practical skills and transform creative ideas into reality.',
       imageSrc: achievement4
     },
     {

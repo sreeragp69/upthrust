@@ -27,7 +27,7 @@ const HomeSwiper: React.FC = () => {
   }, [])
 
   return (
-    <section className="relative flex w-[98vw] sm:w-[95vw] md:w-[88vw] xl:w-[80vw]! 2xl:w-[78vw]! min-[1920px]:w-[68vw]! min-[1680px]:w-[50%] 3xl:w-[40%]! mx-auto items-center justify-center overflow-hidden py-6">
+    <section className="relative flex  w-[98vw] sm:w-[95vw] md:w-[90vw] min-[1680px]:w-[90%] mx-auto items-center justify-center overflow-hidden py-6">
       
       {/* Left fade */}
       <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-themeBackgroundColor to-transparent pointer-events-none z-10" />

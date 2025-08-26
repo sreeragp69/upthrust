@@ -46,8 +46,8 @@ const AppSidebar: React.FC = () => {
 
   return (
     <aside
-      className={`fixed pt-3 flex flex-col top-0 right-0 h-screen z-50 w-[300px] 
-        bg-white shadow-xl border-l border-gray-100
+      className={`fixed pt-3 flex flex-col top-0 right-0 h-screen z-999999 w-[300px] 
+        bg-themeBackgroundColor shadow-xl border-l border-gray-100
         transition-transform duration-300 ease-in-out
         ${isMobileOpen ? "translate-x-0" : "translate-x-full"} 
         lg:hidden`}
@@ -60,15 +60,15 @@ const AppSidebar: React.FC = () => {
             </h3>
             <div className="space-y-2">
               {AppHeaderData.map((item) => (
-                <Link
+                <a
                   key={item.id}
-                  to={item.path}
+                  href={item.path} 
                   onClick={handleNavClick}
                   className={`group flex items-center gap-4 px-4 py-3 rounded-md text-base font-medium relative transition-all duration-200
                     ${
                       isActive(item.path)
                         ? "text-[var(--color-themePrimary)] font-semibold border-l-4 border-[var(--color-themePrimary)] bg-[var(--color-themeBackgroundColor)]"
-                        : "text-gray-700 hover:text-[var(--color-themePrimary)] hover:bg-[var(--color-themeBackgroundColor)]"
+                        : "text-gray-700 hover:text-[var(--color-themePrimary)] hover:bg-white"
                     }`}
                 >
                   <span
@@ -100,7 +100,7 @@ const AppSidebar: React.FC = () => {
                     )}
                   </span>
                   <span>{item.name}</span>
-                </Link>
+                </a>
               ))}
             </div>
           </div>

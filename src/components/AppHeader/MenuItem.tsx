@@ -47,21 +47,21 @@ const MenuItem: React.FC<MenuItemProps> = ({
       {hasDropdown ? (
         <motion.p
           transition={transition}
-          className="cursor-pointer text-themeGray font-medium uppercase tracking-wide text-sm xl:text-base px-5 py-1 rounded-lg hover:text-themePrimary transition-all duration-300"
+          className="cursor-pointer text-themeGray font-medium uppercase tracking-wide text-sm  px-5 py-1 rounded-lg hover:text-themePrimary transition-all duration-300"
         >
           {item}
         </motion.p>
       ) : isHashLink ? (
         <button
           onClick={() => handleScroll(path.replace("#", ""))}
-          className="text-themeGray uppercase tracking-wide font-medium px-2 py-1 lg:px-5 2xl:px-5 text-sm xl:text-base rounded-lg hover:text-themePrimary transition-all duration-300"
+          className="text-themeGray uppercase tracking-wide font-medium px-2 py-1 lg:px-5 2xl:px-5 text-sm  rounded-lg hover:text-themePrimary transition-all duration-300"
         >
           {item}
         </button>
       ) : (
         <a
           href={path}
-          className="text-themeGray uppercase tracking-wide font-medium px-2 py-1 lg:px-5 2xl:px-5 text-sm xl:text-base rounded-lg hover:text-themePrimary transition-all duration-300"
+          className="text-themeGray uppercase tracking-wide font-medium px-2 py-1 lg:px-5 2xl:px-5 text-sm  rounded-lg hover:text-themePrimary transition-all duration-300"
         >
           {item}
         </a>

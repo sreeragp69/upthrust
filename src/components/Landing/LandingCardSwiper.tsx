@@ -15,6 +15,7 @@ const LandingCardSwiper = () => {
       <Swiper
         effect="cards"
         grabCursor={true}
+        loop={true}
         modules={[EffectCards]}
         className="mySwiper scale-76 sm:scale-80  w-[320px]  sm:w-[320px]  max-w-md " // adjust width for responsiveness
       >

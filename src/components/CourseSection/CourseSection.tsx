@@ -126,7 +126,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
             {courseSectionData.title}
           </motion.h2>
           <motion.p
-            className="text-[#6D758F] text-xs xl:text-base 2xl:text-base tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria w-full sm:w-2/3 md:w-1/2 lg:w-[30%]"
+            className="text-lightGray text-xs lg:text-[16px] xl:text-sm 2xl:text-sm  tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria w-full sm:w-2/3 md:w-1/2 "
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -186,7 +186,9 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
 
         {/* Swiper Slider */}
         <motion.div
-          className="relative w-[82vw] sm:w-[90vw] md:w-[90vw] xl:w-[80vw]! 2xl:w-[78vw]! min-[1920px]:w-[68vw]! min-[1680px]:w-[50%] 3xl:w-[40%]! mx-auto px-4 py-7 overflow-hidden"
+          // className="relative  mx-auto w-[82vw] sm:w-[90vw] md:w-[90vw] xl:w-[80vw]! 2xl:w-[78vw]! min-[2200px]:w-[65vw]!  min-[2520px]:w-[40vw]!  px-4 py-7 overflow-hidden"
+          // className="relative w-[82vw] sm:w-[90vw] md:w-[90vw] xl:w-[80vw]! 2xl:w-[78vw]! min-[1920px]:w-[68vw]! min-[1680px]:w-[50%] 3xl:w-[40%]! mx-auto px-4 py-7 overflow-hidden"
+          className="relative mx-auto w-full max-w-[90vw]  px-4 py-7 overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -199,7 +201,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
             loop={false}
             onSwiper={setSwiper}
             onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)}
-            className="course-swiper scale-110 md:scale-100"
+            className="course-swiper md:scale-100"
             // pagination={{ clickable: true }}
 
             breakpoints={{
@@ -215,6 +217,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({ isLoading = false }) => {
                 slidesPerView: 3,
                 spaceBetween: 24,
               },
+             
             }}
           >
             {courseSectionData.courses.map((course, index) => (

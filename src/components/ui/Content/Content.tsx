@@ -16,12 +16,12 @@ const Content = ({
   id,
   titleClass,
   descriptionClass,
-  gap
+  gap,
 }: ContentProps) => {
   return (
     <motion.div
       id={id}
-      className={clsx("space-y-",gap)}
+      className={clsx("space-y-", gap)}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -40,7 +40,7 @@ const Content = ({
       </motion.h3>
       <motion.p
         className={clsx(
-          `text-[#6D758F] text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base leading-relaxed lg:leading-snug xl:leading-relaxed font-alexandria`,
+          `text-lightGray text-xs lg:text-[16px] xl:text-sm 2xl:text-sm  tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria`,
           descriptionClass
         )}
         initial={{ opacity: 0 }}

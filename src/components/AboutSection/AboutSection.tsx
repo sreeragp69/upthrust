@@ -124,7 +124,7 @@ const AboutSection = () => {
             viewport={{ once: true }}
           >
             <ImageWithFallback
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               src={AboutSecImg4}
               alt="About section illustration"
              

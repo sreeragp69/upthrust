@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import TestimonialSkeleton from "./TestimonialSkeleton";
 import { TestimonialCardProps } from "../../types/TestimonialsSection.type";
-import upthrustbg from '../../assets/images/carosel/upthrustbg.png'
+import upthrustbg from "../../assets/images/carosel/upthrustbg.png";
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({
   testimonial,
@@ -32,7 +32,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="relative w-64 h-64 xs:w-80 xs:h-80 sm:w-80 sm:h-80 md:h-96"
+            className="relative w-64 h-64 xs:w-80 xs:h-80 sm:w-80 sm:h-80 md:h-96 md:w-96 lg:w-w-96 lg:h-[32rem] 2xl:w-[36rem] 2xl:h-[33rem] "
           >
             {/* Background decoration */}
             <motion.div
@@ -47,11 +47,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 </div>
               )}
               <img
-                src={
-                  bgImageError
-                    ? "/images/error/fallback.png"
-                    :upthrustbg
-                }
+                src={bgImageError ? "/images/error/fallback.png" : upthrustbg}
                 alt="Background decoration"
                 className={`w-full h-full object-contain ${
                   bgImageLoading ? "hidden" : ""
@@ -70,10 +66,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="absolute top-1/2 left-1/2 transform rounded-2xl lg:rounded-[40px] p-2 bg-white  -translate-x-1/2 -translate-y-1/2 w-32 h-40 xs:w-40 sm:w-52 sm:h-52 md:w-48 md:h-60"
+              className="absolute top-1/2 left-[55%] transform rounded-2xl lg:rounded-[40px]  -translate-x-1/2 -translate-y-1/2 w-32 h-40 xs:w-40 sm:w-52 sm:h-52 md:w-48 md:h-60 lg:w-56 lg:h-72 2xl:w-64 2xl:h-80 "
             >
               {personImageLoading && (
-                <div className="w-full h-full bg-gray-300 rounded-2xl lg:rounded-4xl animate-pulse flex items-center justify-center">
+                <div className="w-full h-full  rounded-2xl lg:rounded-4xl animate-pulse flex items-center justify-center">
                   <div className="w-6 h-6 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
                 </div>
               )}
@@ -107,33 +103,33 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         >
           <div className="w-2/3">
             <div className="space-y-3">
-            <motion.p
-              initial={{ y: -10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.3 }}
-              className="text-gray-600 text-xs xs:text-sm sm:text-base font-medium"
-            >
-              Student Wall
-            </motion.p>
+              <motion.p
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+                className="text-gray-600 text-xs xs:text-sm sm:text-base font-medium"
+              >
+                Student Wall
+              </motion.p>
 
-            <motion.h2
-              initial={{ y: -10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.3 }}
-              className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight"
-            >
-              What our students <br /> are saying
-            </motion.h2>
+              <motion.h2
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.3 }}
+                className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight"
+              >
+                What our students <br /> are saying
+              </motion.h2>
 
-            <motion.p
-              initial={{ y: -10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.3 }}
-              className="text-xs sm:text-base leading-relaxed alexandria text-[#6D758F]"
-            >
-              {testimonial.testimonial}
-            </motion.p>
-          </div>
+              <motion.p
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+                className="text-xs sm:text-base leading-relaxed alexandria text-lightGray"
+              >
+                {testimonial.testimonial}
+              </motion.p>
+            </div>
           </div>
 
           <motion.div

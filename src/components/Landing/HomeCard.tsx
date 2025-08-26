@@ -54,7 +54,7 @@ const HomeCard: React.FC<HomeCardProps> = ({
 
   if (loading) {
     return (
-      <div className="w-full max-w-sm">
+      <div className="w-full max-w-sm 2xl:max-w-(--breakpoint-2xl)">
         <div className="relative overflow-hidden rounded-3xl bg-skeletonPrimary shadow p-6 animate-pulse">
           <div className="h-64 w-full bg-skeletonPrimary/80 rounded-2xl mb-4"></div>
           <div className="h-6 w-1/2 bg-skeletonPrimary/80 rounded mb-2"></div>
@@ -66,7 +66,7 @@ const HomeCard: React.FC<HomeCardProps> = ({
 
   // ✅ Once parent API finished, show actual card
   return (
-    <div className="w-full max-w-sm">
+    <div className="w-full max-w-sm 2xl:max-w-(--breakpoint-2xl)">
       <motion.div
         ref={cardRef}
         key={id}
@@ -78,7 +78,7 @@ const HomeCard: React.FC<HomeCardProps> = ({
           rotate: enableTilt && isInView && hasScrolled ? rotateTarget : 0,
         }}
         transition={{
-        duration: isInView ? 0.1 : 0.8,
+          duration: isInView ? 0.1 : 0.8,
           // delay: index * 0.2,
           ease: [0.25, 0.46, 0.45, 0.94],
         }}
@@ -114,8 +114,6 @@ const HomeCard: React.FC<HomeCardProps> = ({
         {/* Character image */}
         {characterTrue && characterImage && (
           <>
-           
-
             {charError && (
               <div className="absolute z-50 top-[22%] left-1/2 -translate-x-1/2 -translate-y-1/2 h-40 lg:h-[314px] flex items-center justify-center">
                 <img

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Button from "../../components/ui/button/Button";
 import { testimonialImage } from "../../constant/Home.data";
 import { GAME_DEV_CARDS } from "../../constant/Home.data";
@@ -10,6 +10,8 @@ import DottedLineAnimation from "./DottedLineAnimation";
 import AvatarStack from "./AvatarStack";
 import UserFallback from "../../assets/images/error/userFallback.png";
 import dots from "../../assets/images/carosel/dots.png";
+import SocialSidebar from "../common/SocialSidebar";
+// import { useInView } from "react-intersection-observer";
 
 const LandingPage: React.FC = () => {
   const containerVariants = {
@@ -120,10 +122,10 @@ const LandingPage: React.FC = () => {
             className="text-center md:text-center font-alexandria text-[#727272] flex justify-center flex-col items-center mt-10 md:mt-20"
           >
             <p className="w-[86%] mb-3 lg:mb-0 md:w-[66%]">
-              At 
-              <span className="ml-6 lg:ml-0 text-themePrimary font-bold">
-                {" "}The 
-                Upthrust
+              At
+              <span className=" text-themePrimary font-bold">
+                {" "}
+                The Upthrust
               </span>
               , we believe learning should go beyond theory. Our certification
               courses in Game Development and Design, Digital Marketing, Web and
@@ -142,7 +144,7 @@ const LandingPage: React.FC = () => {
 
         <LandingCardSwiper />
 
-        <motion.div
+        {/* <motion.div
           className=" hidden md:grid  justify-items-center   grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 w-full mt-20 sm:mt-24 md:mt-28  lg:px-8"
           variants={containerVariants}
           initial="hidden"
@@ -181,6 +183,18 @@ const LandingPage: React.FC = () => {
             characterImage={GAME_DEV_CARDS[2].characterImage}
             tilt="right"
           />
+        </motion.div> */}
+
+        <motion.div
+          className="hidden md:grid justify-items-center grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 2xl:gap-6 w-full mt-20 sm:mt-24 md:mt-28 lg:px-8 xl:px-5"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          {GAME_DEV_CARDS.map((card, index) => (
+            <TiltCard key={card.id} card={card} index={index} />
+          ))}
         </motion.div>
 
         {/* Enhanced spacing and animation for swiper */}
@@ -194,7 +208,84 @@ const LandingPage: React.FC = () => {
           <HomeSwiper />
         </motion.div>
       </div>
+      <SocialSidebar />
     </div>
+  );
+};
+
+// const TiltCard = ({ card, index }: any) => {
+//   const ref = useRef(null);
+
+//   // Track scroll progress of this card
+//   const { scrollYProgress } = useScroll({
+//     target: ref,
+//     offset: ["start center", "end center"],
+//     // expands the scroll window (card enters → exits viewport center)
+//   });
+
+//   // Define tilt direction
+//   const tiltDirection = index === 0 ? -12 : index === 1 ? 0 : 12;
+
+//   // More tilt + keep tilt longer in middle of scroll
+//   const rotate = useTransform(
+//     scrollYProgress,
+//     [0, 0.3, 0.7, 1], // 👈 wider range
+//     [0, tiltDirection, tiltDirection, 0] // 👈 tilt holds between 30% - 70%
+//   );
+
+//   return (
+//     <motion.div ref={ref} style={{ rotate }}>
+//       <HomeCard
+//         id={card.id}
+//         index={index}
+//         backgroundImage={card.backgroundImage}
+//         subtitle={card.subtitle}
+//         alt={card.alt}
+//         characterTrue={card.characterTrue}
+//         characterImage={card.characterImage}
+//       />
+//     </motion.div>
+//   );
+// };
+
+const TiltCard = ({ card, index }: any) => {
+  const ref = useRef(null);
+
+  // Track scroll progress of this card
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start center", "end center"],
+  });
+
+  // Define tilt direction
+  const tiltDirection = index === 0 ? -12 : index === 1 ? 0 : 12;
+
+  // Base rotate mapping
+  const rawRotate = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.7, 1],
+    [0, tiltDirection, tiltDirection, 0]
+  );
+
+  // Apply spring for bounce effect
+  const rotate = useSpring(rawRotate, {
+    stiffness: 200, // higher = snappier
+    damping: 12, // lower = more bounce
+    mass: 0.6, // adjust weight of motion
+  });
+
+  return (
+    <motion.div ref={ref} style={{ rotate }}>
+      <HomeCard
+        id={card.id}
+        index={index}
+        backgroundImage={card.backgroundImage}
+        subtitle={card.subtitle}
+        alt={card.alt}
+        characterTrue={card.characterTrue}
+        characterImage={card.characterImage}
+      />
+    </motion.div>
   );
 };
 

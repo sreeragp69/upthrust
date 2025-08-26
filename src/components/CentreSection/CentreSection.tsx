@@ -94,17 +94,18 @@ const CentreSection = () => {
               Innovation
             </motion.h1>
             <motion.p
-              className="text-sm sm:text-base justify-start text-start md:text-lg  max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg font-alexandria text-[#6D758F] leading-relaxed "
+              className="text-sm sm:text-base justify-start text-start md:text-sn  max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg font-alexandria text-lightGray leading-relaxed "
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               We have established “Centres of Excellence” at some of the leading
-              universities of Madhya Pradhesh. <br/> Each centre is designed to nurture talent, foster
-              collaboration and bring bold ideas to life. From game development
-              to digital marketing we provide an ecosystem that encourages
-              experimentation and excellence. These hubs empower learners and
-              professionals to shape the future of digital innovation.
+              universities of Madhya Pradhesh. <br /> Each centre is designed to
+              nurture talent, foster collaboration and bring bold ideas to life.
+              From game development to digital marketing we provide an ecosystem
+              that encourages experimentation and excellence. These hubs empower
+              learners and professionals to shape the future of digital
+              innovation.
             </motion.p>
           </motion.div>
 

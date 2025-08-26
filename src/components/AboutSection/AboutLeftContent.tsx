@@ -35,24 +35,23 @@ const AboutLeftContent = ({ itemVariants }: AboutLeftContentProps) => {
           Result-Oriented Training, Backed <br /> by Experience!
         </motion.h1>
         <motion.p
-          className="text-[#6D758F] text-xs xl:text-base 2xl:text-base tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria"
+          className="text-lightGray text-xs lg:text-[16px] xl:text-sm 2xl:text-sm  tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           At The Upthrust, we bring over 14 years of expertise in defining the
-          career trajectory of students with Game Development and
-          Digital Marketing courses. Our focus has always been on delivering
-          practical learning that backs students when they face real-world
-          challenges. Industry training & internships are the two most valuable
-          factors that make The Upthrust a unique choice among career
-          enthusiasts.
+          career trajectory of students with Game Development and Digital
+          Marketing courses. Our focus has always been on delivering practical
+          learning that backs students when they face real-world challenges.
+          Industry training & internships are the two most valuable factors that
+          make The Upthrust a unique choice among career enthusiasts.
           <br />
-          We don’t just teach, we mentor, guide and provide hands-on exposure
-          to ensure that every learner can confidently apply their skills in
-          this cut-throat competitive world. From Game Design and Digital
-          Marketing to Mobile App and Web Development, our certification courses
-          are designed to help you grow and succeed.
+          We don’t just teach, we mentor, guide and provide hands-on exposure to
+          ensure that every learner can confidently apply their skills in this
+          cut-throat competitive world. From Game Design and Digital Marketing
+          to Mobile App and Web Development, our certification courses are
+          designed to help you grow and succeed.
         </motion.p>
 
         <motion.div

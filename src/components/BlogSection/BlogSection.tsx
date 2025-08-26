@@ -1,14 +1,11 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState, useEffect } from "react"
-import {  BlogSectionProps } from "../../types/BlogSection.type"
-import { BLOG_POSTS, BLOG_SECTION_DATA } from "../../constant/BlogSection.data"
-import BlogCard from "./BlogCard"
-import BlogSkeleton from "./BlogSkeleton"
-
-
-
+import type React from "react";
+import { useState, useEffect } from "react";
+import { BlogSectionProps } from "../../types/BlogSection.type";
+import { BLOG_POSTS, BLOG_SECTION_DATA } from "../../constant/BlogSection.data";
+import BlogCard from "./BlogCard";
+import BlogSkeleton from "./BlogSkeleton";
 
 const BlogSection: React.FC<BlogSectionProps> = ({
   title = BLOG_SECTION_DATA.title,
@@ -16,21 +13,19 @@ const BlogSection: React.FC<BlogSectionProps> = ({
   posts = BLOG_POSTS,
   loading = false,
 }) => {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (loading) {
       const timer = setTimeout(() => {
-        setIsLoading(false)
-      }, 1500)
-      return () => clearTimeout(timer)
+        setIsLoading(false);
+      }, 1500);
+      return () => clearTimeout(timer);
     }
-  }, [loading])
+  }, [loading]);
 
   return (
-    <section 
-      id="blog"
-    className="py-16 px-4  ">
+    <section id="blog" className="py-16 px-4  ">
       <div className=" mx-auto">
         {/* Header */}
         <div className="text-center flex items-center flex-col mb-16">
@@ -42,8 +37,12 @@ const BlogSection: React.FC<BlogSectionProps> = ({
             </div>
           ) : (
             <>
-              <h2 className="text-xl sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl leading-8 font-bold text-gray-900 mb-4">{title}</h2>
-              <p className="text-[#6D758F] text-xs md:text-sm lg:text-base xl:text-base 2xl:text-lg tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria max-w-2xl">{subtitle}</p>
+              <h2 className="text-xl sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl leading-8 font-bold text-gray-900 mb-4">
+                {title}
+              </h2>
+              <p className="text-lightGray text-xs md:text-sm lg:text-base xl:text-base 2xl:text-lg tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria max-w-2xl">
+                {subtitle}
+              </p>
             </>
           )}
         </div>
@@ -75,7 +74,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default BlogSection
+export default BlogSection;

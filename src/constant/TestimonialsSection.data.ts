@@ -1,8 +1,9 @@
 import type { Testimonial } from "../types/TestimonialsSection.type"
 import testuser from '../assets/images/carosel/testuser.png'
-import testimonial1 from '../assets/images/carosel/testimonial1.jpeg'
-import testimonial2 from '../assets/images/carosel/testimonial2.jpeg'
-import testimonial3 from '../assets/images/carosel/testimonial3.jpeg'
+import testimonial1 from '../assets/images/carosel/testimonial1.png'
+import testimonial2 from '../assets/images/carosel/testimonial2.png'
+import testimonial3 from '../assets/images/carosel/testimonial3.png'
+import testimonial4 from '../assets/images/carosel/testimonial4.png'
 export const testimonialsData: Testimonial[] = [
   {
     id: "1",
@@ -30,11 +31,11 @@ export const testimonialsData: Testimonial[] = [
   },
   {
     id: "4",
-    name: "Emily Rodriguez",
+    name: "Koshi Verma ",
     designation: "UI/UX Design",
     testimonial:
-      "The design program exceeded my expectations. From wireframing to prototyping, every aspect was covered thoroughly. The feedback from instructors helped me build a portfolio that impressed employers.",
-    image: testuser,
+      "This UI/UX course is super easy to follow and makes learning design fun. The hands-on projects really help in understanding how things work in real life.",
+    image: testimonial4,
   },
   // {
   //   id: "5",
@@ -42,7 +43,7 @@ export const testimonialsData: Testimonial[] = [
   //   designation: "Cybersecurity",
   //   testimonial:
   //     "Excellent program with up-to-date content on cybersecurity threats and solutions. The hands-on labs and real-world scenarios prepared me well for industry challenges. Highly recommend to anyone looking to enter cybersecurity.",
-  //   image: testuser,
+  //   image: testimonial4,
 
   // },
 ]

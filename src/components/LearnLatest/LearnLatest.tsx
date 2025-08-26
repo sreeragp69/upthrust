@@ -13,8 +13,8 @@ import Button from "../ui/button/Button";
 import Content from "../ui/Content/Content";
 import MobileSkeleton from "./MobileSkeleton";
 const RightArrowIMg = "/images/icons/rightArrow.svg";
-import Fallback from '../../assets/images/error/fallback.png'
-import learnlatest from '../../assets/images/home/learnlatest.png'
+import Fallback from "../../assets/images/error/fallback.png";
+import learnlatest from "../../assets/images/home/learnlatest.png";
 // Loading skeleton components
 const FeatureSkeleton = () => (
   <div className="animate-pulse rounded-2xl p-4 sm:p-5 md:p-6">
@@ -25,12 +25,11 @@ const FeatureSkeleton = () => (
   </div>
 );
 
-
 // Main component
 const LearnLatest: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<LearnLatestData | null>(null);
-   const [imgError, setImgError] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   // Animation variants
   const containerVariants = {
@@ -63,7 +62,7 @@ const LearnLatest: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-if (isLoading) {
+  if (isLoading) {
     return (
       <section className="py-12 md:py-16 lg:py-24">
         <div className=" mx-auto">
@@ -105,7 +104,6 @@ if (isLoading) {
     );
   }
 
-
   if (!data) return null;
 
   return (
@@ -129,7 +127,7 @@ if (isLoading) {
               {data.mainTitle}
             </motion.h2>
             <motion.p
-              className="text-[#6D758F] text-xs md:text-sm  lg:text-sm xl:text-base 2xl:text-base leading-relaxed lg:leading-snug xl:leading-relaxed font-alexandria"
+              className="text-lightGray text-xs md:text-sm  lg:text-sm xl:text-base 2xl:text-base leading-relaxed lg:leading-snug xl:leading-relaxed font-alexandria"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -175,7 +173,7 @@ if (isLoading) {
                 {data.mainTitle}
               </motion.h2>
               <motion.p
-                className="text-[#6D758F] text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base leading-relaxed lg:leading-snug xl:leading-relaxed font-alexandria w-full lg:w-[85%]"
+                className="text-lightGray text-xs lg:text-[16px] xl:text-sm 2xl:text-sm  tracking-[0.02em] lg:leading-5 2xl:leading-5 font-alexandria w-full lg:w-[85%]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -205,7 +203,7 @@ if (isLoading) {
           >
             <div className="relative w-full max-w-md mx-auto">
               <motion.img
-               src={imgError ? Fallback : data.illustration.src}
+                src={imgError ? Fallback : data.illustration.src}
                 onError={() => setImgError(true)}
                 alt={data.illustration.alt}
                 className="w-full h-auto rounded-4xl max-w-[16rem] sm:max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg object-contain relative z-10 mx-auto"
@@ -213,7 +211,7 @@ if (isLoading) {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                whileHover={{ scale: 1.05, rotate: 2 }}
+                whileHover={{ scale: 1.05 }}
               />
             </div>
           </motion.div>

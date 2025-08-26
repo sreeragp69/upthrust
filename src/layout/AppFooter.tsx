@@ -52,9 +52,10 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
   // Course selection is now handled by the Select component
 
   return (
-    <div 
-    id="contact-us"
-    className="w-full lg:pt-[200px] xl:pt-[250px]  bg-white py-6 sm:py-8 md:py-10 lg:py-16 relative">
+    <div
+      id="contact-us"
+      className="w-full lg:pt-[200px] xl:pt-[250px]  bg-white py-6 sm:py-8 md:py-10 lg:py-16 relative"
+    >
       <Subscribe />
       <motion.footer
         initial={{ opacity: 0 }}
@@ -62,7 +63,7 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
         transition={{ duration: 0.6 }}
         className="mt-66 sm:mt-80  md:mt-89 lg:mt-0"
       >
-        <div className="mx-auto  px-3 sm:px-4 md:px-6 lg:px-8 max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
+        <div className="mx-auto  px-3 sm:px-4 md:px-6 lg:px-8 max-w-(--breakpoint-2xl) 2xl:max-w-(--breakpoint-2xl) 4xl:max-w-(--breakpoint-3xl) grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
           <div className="lg:col-span-8 w-full">
             {/* Header */}
             <motion.div
@@ -93,7 +94,7 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
                     />
                   </div>
                 </div>
-                <p className="text-xs xs:text-sm sm:text-base  md:text-base  xs:max-w-sm sm:max-w-md font-alexandria text-[#6D758F]">
+                <p className="text-xs xs:text-sm sm:text-base  md:text-base  xs:max-w-sm sm:max-w-md font-alexandria text-lightGray">
                   {FOOTER_DATA.company.description}
                 </p>
               </motion.div>
@@ -154,12 +155,11 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
                   </motion.div>
                 </div>
               </div>
-              
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-4 w-full ml-10 lg:scale-90">
+          <div className="lg:col-span-4 w-full md:ml-10 lg:scale-90">
             <Form
               heading="Any Enquires"
               onSubmit={handleSubmit}
