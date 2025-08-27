@@ -63,9 +63,9 @@ const Unauthorized: React.FC = () => {
                   ease: "easeInOut"
                 }}
               >
-                <h1 className="text-7xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-600 to-red-600 select-none tracking-tighter">
+                <h2 className="text-7xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-600 to-red-600 select-none tracking-tighter">
                   401
-                </h1>
+                </h2>
                 {/* 3D shadow effect */}
                 <div className="absolute inset-0 text-7xl md:text-8xl font-black text-gray-300/20 select-none tracking-tighter transform translate-x-2 translate-y-2 -z-10">
                   401

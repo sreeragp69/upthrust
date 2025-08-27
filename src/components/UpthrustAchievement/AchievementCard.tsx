@@ -37,14 +37,14 @@ const AchievementCard: React.FC<Omit<AchievementCardProps, "id">> = ({
       <div className="mt-4 xs:mt-5 "></div>
 
       {/* Title */}
-      <motion.h3
+      <motion.h4
         initial={{ opacity: 0, x: -10 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.3, duration: 0.4 }}
         className="text-themePrimary text-sm xs:text-base sm:text-lg md:text-xl font-bold mb-1 xs:mb-2 font-syne"
       >
         {title}
-      </motion.h3>
+      </motion.h4>
 
       {/* Description */}
       <motion.p

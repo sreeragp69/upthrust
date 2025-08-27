@@ -44,9 +44,9 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
 
       <div className="px-0 py-3 lg:py-6 flex-1 flex flex-col justify-between">
         <div className="flex-1">
-          <h3 className="text-xl sm:text-xl md:text-xl lg:text-2xl 2xl:text-3xl leading-8 font-bold text-gray-900 mb-1 lg:mb-4">
+          <h4 className="text-xl sm:text-xl md:text-xl lg:text-2xl 2xl:text-3xl leading-8 font-bold text-gray-900 mb-1 lg:mb-4">
             {post.title}
-          </h3>
+          </h4>
           <p className="text-lightGray text-xs md:text-sm lg:text-sm xl:text-base  tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria line-clamp-2">
             {post.description}
           </p>

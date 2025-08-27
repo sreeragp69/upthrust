@@ -90,9 +90,9 @@ const PopupBox = ({
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex items-center justify-between mx-6 py-3 border-b border-gray-200">
-            <h2 className="text-3xl font-medium text-gray-700 ">
+            <h4 className="text-3xl font-medium text-gray-700 ">
               {title || "Add"}
-            </h2>
+            </h4>
             {showCloseButton && (
               <motion.button
                 whileHover={{ rotate: 30, scale: 1.1 }}

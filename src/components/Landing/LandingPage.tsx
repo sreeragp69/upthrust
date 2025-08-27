@@ -4,14 +4,13 @@ import Button from "../../components/ui/button/Button";
 import { testimonialImage } from "../../constant/Home.data";
 import { GAME_DEV_CARDS } from "../../constant/Home.data";
 import HomeCard from "../../components/Landing/HomeCard";
-import HomeSwiper from "./InfiniteCards";
 import LandingCardSwiper from "./LandingCardSwiper";
-import DottedLineAnimation from "./DottedLineAnimation";
 import AvatarStack from "./AvatarStack";
 import UserFallback from "../../assets/images/error/userFallback.png";
 import dots from "../../assets/images/carosel/dots.png";
 import SocialSidebar from "../common/SocialSidebar";
-// import { useInView } from "react-intersection-observer";
+import { InfiniteMovingCards } from "./infinite-moving-cards";
+import { HomeSwiperImages } from "../../constant/Home.data";
 
 const LandingPage: React.FC = () => {
   const containerVariants = {
@@ -26,30 +25,26 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div id="home" className=" bg-themeBackgroundColor mx-auto">
-      <div className=" mt-10 mx-auto    flex flex-col items-center justify-center">
+    <div id="home" className=" bg-themeBackgroundColor mx-auto ">
+      <div className=" mt-32 lg:mt-14 mx-auto    flex flex-col items-center justify-center">
         <div className="relative text-center flex items-center justify-center flex-col w-full">
           {/* Mobile decorative dots only (removed gradient) */}
-
+         
           <div className="uppercase relative w-full md:w-[60%] ]text-center">
             <motion.h1
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6 }}
               className="text-2xl sm:text-3xl md:text-4xl font-medium text-themeGray"
             >
-              Define a <br className="lg:hidden" /> new way for
+              Define a <br className="lg:hidden" /> new way for{" "}
+              <span className="block text-3xl sm:text-4xl md:text-6xl font-bold text-themePrimary">
+                Job-Oriented
+              </span>
             </motion.h1>
-            <motion.h1
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.05 }}
-              className="text-3xl sm:text-4xl md:text-6xl font-bold text-themePrimary"
-            >
-              Job-Oriented
-            </motion.h1>
+
             <div className="hidden lg:flex flex-col items-center w-fit absolute uppercase  lg:right-20  xl:right-40 lg:text-2xl xl:text-3xl 2xl:text-4xl -bottom-9 font-bold right-37 lg:scale-y-90 lg:px-7 lg:py-1 lg:-rotate-3 rounded-full justify-center text-white bg-[#55B700]">
-              <h2 className="scale-y-110">Training</h2>
+              <span className="scale-y-110">Training</span>
             </div>
           </div>
           <div className="hidden lg:block absolute lg:right-32 top-[20%] xl:right-40 lg:h-20 xl:h-28">
@@ -65,7 +60,7 @@ const LandingPage: React.FC = () => {
               whileHover={{ scale: 1.05, rotate: 2 }}
               className="flex lg:hidden rotate-0 md:relative flex-col md:flex-row items-center w-fit uppercase text-base px-5 py-2 font-bold rounded-full justify-center text-white bg-[#55B700] shadow-theme-xs"
             >
-              <h2>Training</h2>
+              <span>Training</span>
             </motion.div>
 
             {/* User Avatars */}
@@ -144,47 +139,6 @@ const LandingPage: React.FC = () => {
 
         <LandingCardSwiper />
 
-        {/* <motion.div
-          className=" hidden md:grid  justify-items-center   grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 w-full mt-20 sm:mt-24 md:mt-28  lg:px-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          <HomeCard
-            id={GAME_DEV_CARDS[0].id}
-            index={0}
-            backgroundImage={GAME_DEV_CARDS[0].backgroundImage}
-            subtitle={GAME_DEV_CARDS[0].subtitle}
-            alt={GAME_DEV_CARDS[0].alt}
-            characterTrue={GAME_DEV_CARDS[0].characterTrue}
-            characterImage={GAME_DEV_CARDS[0].characterImage}
-            tilt="left"
-          />
-
-          <HomeCard
-            id={GAME_DEV_CARDS[1].id}
-            index={1}
-            backgroundImage={GAME_DEV_CARDS[1].backgroundImage}
-            subtitle={GAME_DEV_CARDS[1].subtitle}
-            alt={GAME_DEV_CARDS[1].alt}
-            characterTrue={GAME_DEV_CARDS[1].characterTrue}
-            characterImage={GAME_DEV_CARDS[1].characterImage}
-            tilt="none"
-          />
-
-          <HomeCard
-            id={GAME_DEV_CARDS[2].id}
-            index={2}
-            backgroundImage={GAME_DEV_CARDS[2].backgroundImage}
-            subtitle={GAME_DEV_CARDS[2].subtitle}
-            alt={GAME_DEV_CARDS[2].alt}
-            characterTrue={GAME_DEV_CARDS[2].characterTrue}
-            characterImage={GAME_DEV_CARDS[2].characterImage}
-            tilt="right"
-          />
-        </motion.div> */}
-
         <motion.div
           className="hidden md:grid justify-items-center grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 2xl:gap-6 w-full mt-20 sm:mt-24 md:mt-28 lg:px-8 xl:px-5"
           variants={containerVariants}
@@ -199,13 +153,18 @@ const LandingPage: React.FC = () => {
 
         {/* Enhanced spacing and animation for swiper */}
         <motion.div
-          className="mt-16 sm:mt-20 md:mt-24"
+          className="container mt-2 md:mt-10 lg:mt-12 mx-auto px-4 py-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <HomeSwiper />
+          <InfiniteMovingCards
+            items={HomeSwiperImages}
+            direction="right"
+            speed="slow"
+            className="mb-8"
+          />
         </motion.div>
       </div>
       <SocialSidebar />

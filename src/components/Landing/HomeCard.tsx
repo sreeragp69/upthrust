@@ -147,20 +147,20 @@ const HomeCard: React.FC<HomeCardProps> = ({
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-white"
           >
-            <motion.h2
+            <motion.p
               className="text-xl md:text-lg lg:text-xl font-light mb-1 tracking-wide drop-shadow-lg"
               whileHover={{ x: 5 }}
               transition={{ duration: 0.2 }}
             >
               Become a
-            </motion.h2>
-            <motion.h1
+            </motion.p>
+            <motion.p
               className="text-4xl md:text-2xl lg:text-4xl font-clash font-bold uppercase leading-tight tracking-tight drop-shadow-lg"
               whileHover={{ x: 5 }}
               transition={{ duration: 0.2, delay: 0.1 }}
             >
               {subtitle}
-            </motion.h1>
+            </motion.p>
           </motion.div>
         </div>
       </motion.div>

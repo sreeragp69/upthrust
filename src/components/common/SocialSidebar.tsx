@@ -1,13 +1,15 @@
-import React from "react";
-import { motion } from "framer-motion";
+"use client"
 
+import type React from "react"
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 
 type LinkItem = {
-  id: number;
-  href: string;
-  icon: string;
-  label: string;
-};
+  id: number
+  href: string
+  icon: string
+  label: string
+}
 
 const LINKS: LinkItem[] = [
   {
@@ -34,26 +36,203 @@ const LINKS: LinkItem[] = [
     icon: "/images/icons/fb-icon.svg",
     label: "Facebook",
   },
-];
+  {
+    id: 5,
+    href: "https://in.pinterest.com/theupthrustofficial/",
+    icon: "/images/icons/pinterest-icon.svg",
+    label: "Pinterest",
+  },
+  {
+    id: 6,
+    href: "https://x.com/theupthrust",
+    icon: "/images/icons/x-icon.svg",
+    label: "X",
+  },
+]
 
-const SocialSidebar: React.FC = () => {
+const SocialHoverMenu: React.FC = () => {
+  const [isHovered, setIsHovered] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || "ontouchstart" in window)
+    }
+
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
+
+  const getLeftCircularPosition = (index: number, total: number) => {
+    const angleStart = Math.PI * 0.4
+    const angleEnd = Math.PI * 1.6
+    const angleStep = (angleEnd - angleStart) / (total - 1)
+    const angle = angleStart + index * angleStep
+    const radius = isMobile ? 70 : 100
+
+    return {
+      x: Math.cos(angle) * radius - (isMobile ? 20 : 30),
+      y: Math.sin(angle) * radius,
+    }
+  }
+
+  const handleToggle = () => {
+    if (isMobile) {
+      setIsHovered(!isHovered)
+    }
+  }
+
   return (
-    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
-      {LINKS.map((link, index) => (
-        <motion.a
-          key={link.id}
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.2, rotate: 5 }}
-          whileTap={{ scale: 0.9 }}
-          className=" bg-white rounded-full shadow-lg text-themePrimary hover:text-white hover:bg-themePrimary transition-colors"
+    <div
+      className={`fixed z-50 ${isMobile ? "right-4 top-1/2" : "right-6 top-1/2"} -translate-y-1/2`}
+      onMouseEnter={() => !isMobile && setIsHovered(true)}
+      onMouseLeave={() => !isMobile && setIsHovered(false)}
+      onClick={handleToggle}
+    >
+      <div className="relative flex flex-col items-center">
+        {/* Main Trigger Button */}
+        <motion.div
+          className={`relative bg-gradient-to-r from-blue-500 to-themePrimary rounded-full shadow-xl cursor-pointer ${
+            isMobile ? "p-3" : "p-4"
+          }`}
+          whileHover={{ scale: isMobile ? 1 : 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          animate={{
+            rotate: isHovered ? 180 : 0,
+            boxShadow: isHovered ? "0 20px 40px rgba(0,0,0,0.3)" : "0 10px 20px rgba(0,0,0,0.2)",
+          }}
+          transition={{ duration: 0.3 }}
         >
-          <img src={link.icon} alt={link.label} />
-        </motion.a>
-      ))}
-    </div>
-  );
-};
+          <motion.div animate={{ rotate: isHovered ? -180 : 0 }} transition={{ duration: 0.3 }}>
+            <svg
+              width={isMobile ? "20" : "24"}
+              height={isMobile ? "20" : "24"}
+              viewBox="0 0 24 24"
+              fill="none"
+              className="text-white"
+            >
+              <path d="M12 4v16m8-8H4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </motion.div>
 
-export default SocialSidebar;
+          {/* Pulse effect */}
+          <motion.div
+            className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-themePrimary"
+            animate={{
+              scale: isHovered ? [1, 1.2, 1] : 1,
+              opacity: isHovered ? [0.7, 0, 0.7] : 0,
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: isHovered ? Number.POSITIVE_INFINITY : 0,
+              ease: "easeInOut",
+            }}
+          />
+        </motion.div>
+
+        <AnimatePresence>
+          {isHovered && (
+            <>
+              {LINKS.map((link, index) => {
+                const position = getLeftCircularPosition(index, LINKS.length)
+                return (
+                  <motion.a
+                    key={link.id}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{
+                      opacity: 0,
+                      x: 0,
+                      y: 0,
+                      scale: 0.3,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      x: position.x,
+                      y: position.y,
+                      scale: 1,
+                    }}
+                    exit={{
+                      opacity: 0,
+                      x: 0,
+                      y: 0,
+                      scale: 0.3,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.08,
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 25,
+                    }}
+                    whileHover={{
+                      scale: isMobile ? 1.1 : 1.2,
+                      transition: { duration: 0.2 },
+                    }}
+                    whileTap={{ scale: 0.9 }}
+                    className={`group absolute bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 ${
+                      isMobile ? "p-2" : "p-3"
+                    }`}
+                    style={{
+                      transformOrigin: "center",
+                    }}
+                  >
+                    <img
+                      src={link.icon || "/placeholder.svg"}
+                      alt={link.label}
+                      className={`transition-transform duration-300 group-hover:scale-110 ${
+                        isMobile ? "w-5 h-5" : "w-6 h-6"
+                      }`}
+                    />
+
+                    {!isMobile && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileHover={{ opacity: 1, scale: 1 }}
+                        className="absolute bg-gray-900 text-white px-3 py-1 rounded-lg text-sm font-medium whitespace-nowrap pointer-events-none z-10"
+                        style={{
+                          right: position.x < 0 ? "auto" : "100%",
+                          left: position.x < 0 ? "100%" : "auto",
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                          marginLeft: position.x < 0 ? "8px" : "0",
+                          marginRight: position.x < 0 ? "0" : "8px",
+                        }}
+                      >
+                        {link.label}
+                        <div
+                          className={`absolute top-1/2 -translate-y-1/2 border-4 border-transparent ${
+                            position.x < 0 ? "right-full border-r-gray-900" : "left-full border-l-gray-900"
+                          }`}
+                        />
+                      </motion.div>
+                    )}
+                  </motion.a>
+                )
+              })}
+            </>
+          )}
+        </AnimatePresence>
+
+        {/* Background overlay when hovered */}
+        <AnimatePresence>
+          {isHovered && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/5 backdrop-blur-[1px] -z-10"
+              transition={{ duration: 0.3 }}
+              onClick={isMobile ? () => setIsHovered(false) : undefined}
+            />
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  )
+}
+
+export default SocialHoverMenu

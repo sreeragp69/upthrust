@@ -113,9 +113,9 @@ export default function LoginForm() {
                   ease: "easeInOut",
                 }}
               >
-                <h1 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 select-none tracking-tighter">
+                <h2 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 select-none tracking-tighter">
                   Welcome
-                </h1>
+                </h2>
                 {/* 3D shadow effect */}
                 <div className="absolute inset-0 text-6xl md:text-7xl font-black text-gray-300/20  select-none tracking-tighter transform translate-x-2 translate-y-2 -z-10">
                   Welcome
@@ -201,9 +201,9 @@ export default function LoginForm() {
                     <Zap className="w-5 h-5 text-white" />
                   </motion.div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800  mb-2">
+                <h4 className="text-lg font-semibold text-gray-800  mb-2">
                   Sign In to Your Account
-                </h3>
+                </h4>
                 <p className="text-sm text-gray-600 ">
                   Enter your credentials to access your learning portal
                 </p>

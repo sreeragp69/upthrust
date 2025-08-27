@@ -49,9 +49,9 @@ const NotFound: React.FC = () => {
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <h1 className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-themePrimary  via-themePrimary/80 to-themePrimary select-none tracking-tighter">
+                <h2 className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-themePrimary  via-themePrimary/80 to-themePrimary select-none tracking-tighter">
                   404
-                </h1>
+                </h2>
                 <div className="absolute inset-0 text-8xl md:text-9xl font-black text-gray-300/20 select-none tracking-tighter translate-x-2 translate-y-2 -z-10">
                   404
                 </div>

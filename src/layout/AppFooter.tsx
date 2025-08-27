@@ -51,6 +51,26 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
 
   // Course selection is now handled by the Select component
 
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+    const headerOffset = 80; // adjust this to match your header height
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div
       id="contact-us"
@@ -77,7 +97,7 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
               </h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 lg:gap-12 px-3 md:px-0">
               {/* Company Info */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -94,14 +114,14 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
                     />
                   </div>
                 </div>
-                <p className="text-xs xs:text-sm sm:text-base  md:text-base  xs:max-w-sm sm:max-w-md font-alexandria text-lightGray">
+                <p className="text-xs xs:text-sm sm:text-base text-center md:text-left  md:text-base  xs:max-w-sm sm:max-w-md font-alexandria text-lightGray">
                   {FOOTER_DATA.company.description}
                 </p>
               </motion.div>
 
               {/* Useful Links */}
-              <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
-                <h4 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">
+              <div className="space-y-3 sm:space-y-4 text-left">
+                <h4 className="text-[15px] sm:text-base md:text-lg font-semibold text-gray-900">
                   {FOOTER_DATA.sections[0].title}
                 </h4>
                 <ul className="space-y-2">
@@ -114,6 +134,7 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
                     >
                       <a
                         href={link.href}
+                        onClick={(e) => handleScroll(e, link.href)}
                         className="text-gray-600 font-nunito hover:text-themePrimary transition-colors duration-200 text-sm sm:text-base"
                       >
                         {link.label}
@@ -124,8 +145,8 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
               </div>
 
               {/* Contact */}
-              <div className="space-y-3 sm:space-y-4 text-center sm:text-left ">
-                <h4 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">
+              <div className="space-y-3 sm:space-y-4 text-left sm:text-left ">
+                <h4 className="text-[15px] sm:text-base md:text-lg font-semibold text-gray-900">
                   Contact
                 </h4>
                 <div className="space-y-2 sm:space-y-3">
@@ -133,7 +154,7 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.5 }}
-                    className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3"
+                    className="flex items-start justify-start sm:justify-start gap-2 sm:gap-3"
                   >
                     <Phone className="w-4 h-4 text-gray-500 flex-shrink-0" />
                     <span className="text-gray-600 text-sm sm:text-base font-nunito">
@@ -144,7 +165,7 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.6 }}
-                    className="flex items-start justify-center sm:justify-start gap-2 sm:gap-3"
+                    className="flex items-start justify-start sm:justify-start gap-2 sm:gap-3"
                   >
                     <MapPin className="w-4 h-4 text-gray-500 flex-shrink-0 mt-0.5" />
                     <div className="text-gray-600 text-sm sm:text-base leading-relaxed font-nunito">

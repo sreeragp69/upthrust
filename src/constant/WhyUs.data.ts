@@ -7,7 +7,7 @@ export const whyUsData: WhyUsData = {
   features: [
     {
       id: "world-class-teachers",
-      title: "World Class Teachers",
+      title: "World Class Trainers",
       description:
         "Learn from the expert mentors who are not just teachers but tech professionals with 10+ years of experience who bring the real-world insights directly to the classroom. ",
     },

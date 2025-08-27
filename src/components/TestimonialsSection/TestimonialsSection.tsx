@@ -108,14 +108,14 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.4 }}
-              className="flex flex-col sm:grid sm:grid-cols-2 sm:justify-end gap-4 mt-6 sm:mt-8 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto"
+              className="flex  sm:grid sm:grid-cols-2 sm:justify-end gap-4 mt-6 sm:mt-8 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto"
             >
-              <div></div>
-              <div className="flex justify-start gap-4 md:gap-7">
+              <div  ></div>
+              <div className="flex justify-start gap-4 md:gap-7 scale-110 md:scale-100">
                 <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                   <ArrowButton onClick={handlePrevSlide} direction="left" borderColor="#E1E4ED" color="#000" />
                 </motion.div>
-                <div className="text-gray-600 text-xs xs:text-sm sm:text-base flex place-items-center justify-baseline font-medium font-nunito">
+                <div className="scale-110 md:scale-100 text-gray-600 text-xs xs:text-sm sm:text-base flex place-items-center justify-baseline font-medium font-nunito">
                   {currentSlide + 1}/{testimonialsData.length}
                 </div>
                 <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>

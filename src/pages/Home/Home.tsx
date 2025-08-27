@@ -20,11 +20,10 @@ const Home = () => {
       <CourseSection />
       <WhyUs />
       <LearnLatest />
-    <UpthrustAchievement />
+      <UpthrustAchievement />
       <TestimonialsSection />
-      <BlogSection />  
+      <BlogSection />
       <CentreSection />
-     
     </>
   );
 };

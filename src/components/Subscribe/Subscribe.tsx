@@ -57,14 +57,14 @@ const Subscribe: React.FC<SubscribeProps> = ({ isLoading = false }) => {
             className="space-y-3  sm:space-y-4 md:space-y-5 lg:space-y-2 p-4 sm:p-5 md:p-6 lg:p-8 order-2 lg:order-1 text-center lg:col-span-7 lg:text-left"
           >
             <div className="space-y-2 sm:space-y-3">
-              <motion.h2
+              <motion.h4
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-white text-sm sm:text-base md:text-lg  lg:text-base font-normal leading-snug sm:leading-tight alexandria"
               >
                 {SUBSCRIBE_DATA.heading}
-              </motion.h2>
+              </motion.h4>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

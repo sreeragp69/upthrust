@@ -83,14 +83,14 @@ const UpthrustAchievement = () => {
                   whileHover={{ rotate: 5, scale: 1.05 }}
                 />
               </div>
-              <motion.h1
+              <motion.h2
                 className="text-2xl  md:text-2xl lg:text-4xl 2xl:text-4xl leading-8 font-bold text-gray-900 mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
                 {subtitle}
-              </motion.h1>
+              </motion.h2>
               <motion.p
                 className="text-lightGray text-xs lg:text-[16px] xl:text-sm 2xl:text-sm  tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria"
                 initial={{ opacity: 0 }}

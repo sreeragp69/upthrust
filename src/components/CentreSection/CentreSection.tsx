@@ -75,6 +75,8 @@ const CentreSection = () => {
             className="flex flex-col items-start space-y-1   text-center lg:text-left "
             variants={itemVariants}
           >
+
+
             <div className="flex items-baseline flex-wrap gap-1 justify-center lg:justify-start">
               <motion.h2
                 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900"
@@ -85,14 +87,17 @@ const CentreSection = () => {
                 Our Centre of
               </motion.h2>
             </div>
-            <motion.h1
+            
+            <motion.h2
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               Innovation
-            </motion.h1>
+            </motion.h2>
+
+
             <motion.p
               className="text-sm sm:text-base justify-start text-start md:text-sn  max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg font-alexandria text-lightGray leading-relaxed "
               initial={{ opacity: 0 }}

@@ -29,7 +29,7 @@ const Content = ({
     >
       <motion.h3
         className={clsx(
-          `text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-bold text-gray-900 leading-tight `,
+          `text-base text-left sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-bold text-gray-900 leading-tight `,
           titleClass
         )}
         initial={{ opacity: 0, x: -10 }}
@@ -40,7 +40,7 @@ const Content = ({
       </motion.h3>
       <motion.p
         className={clsx(
-          `text-lightGray text-xs lg:text-[16px] xl:text-sm 2xl:text-sm  tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria`,
+          `text-lightGray text-left  text-xs lg:text-[16px] xl:text-sm 2xl:text-sm  tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria`,
           descriptionClass
         )}
         initial={{ opacity: 0 }}

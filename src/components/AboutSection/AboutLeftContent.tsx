@@ -26,14 +26,14 @@ const AboutLeftContent = ({ itemVariants }: AboutLeftContentProps) => {
         >
           About The Upthrust
         </motion.h2>
-        <motion.h1
+        <motion.h3
           className="text-themeGray font-bold text-xl sm:text-xl md:text-2xl 2xl:text-4xl leading-9"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           Result-Oriented Training, Backed <br /> by Experience!
-        </motion.h1>
+        </motion.h3>
         <motion.p
           className="text-lightGray text-xs lg:text-[16px] xl:text-sm 2xl:text-sm  tracking-[0.02em] lg:leading-5 2xl:leading-6 font-alexandria"
           initial={{ opacity: 0, y: 20 }}

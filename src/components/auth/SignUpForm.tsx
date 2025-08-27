@@ -88,9 +88,9 @@ export default function SignUpForm() {
                   ease: "easeInOut"
                 }}
               >
-                <h1 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 select-none tracking-tighter">
+                <h4 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 select-none tracking-tighter">
                   Join Us
-                </h1>
+                </h4>
                 {/* 3D shadow effect */}
                 <div className="absolute inset-0 text-6xl md:text-7xl font-black text-gray-300/20  select-none tracking-tighter transform translate-x-2 translate-y-2 -z-10">
                   Join Us

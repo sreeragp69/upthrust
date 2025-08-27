@@ -47,7 +47,8 @@
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1400px;
   --breakpoint-3xl: 1600px;
-  --breakpoint-4xl: 2000px;
+  --breakpoint-4xl: 1800px;
+  --breakpoint-5xl: 2000px;
 
   --text-title-2xl: 72px;
   --text-title-2xl--line-height: 90px;
@@ -197,15 +198,7 @@
 }
 
  
-@theme inline {
-  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
- 
-  @keyframes scroll {
-    to {
-      transform: translate(calc(-50% - 0.5rem));
-    }
-  }
-}
+
 
 
 @layer base {
@@ -379,4 +372,62 @@
 }
 .animate-draw {
   animation: draw 1s forwards;
+}
+
+
+@layer utilities {
+  @keyframes scroll {
+    to {
+      transform: translateX(calc(-50% - 0.5rem));
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+  }
+}
+/* Add this to your global CSS file (globals.css or similar) */
+
+@keyframes scroll {
+  to {
+    transform: translate3d(calc(-50% - 0.5rem), 0, 0);
+  }
+}
+
+/* Mobile-first responsive animation */
+@keyframes scroll-mobile {
+  to {
+    transform: translate3d(calc(-50% - 0.25rem), 0, 0);
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 40s) 
+             var(--animation-direction, forwards) 
+             linear infinite;
+}
+
+/* Responsive animation adjustments */
+@media (max-width: 640px) {
+  .animate-scroll {
+    animation-name: scroll-mobile;
+  }
+}
+
+/* Ensure smooth performance */
+.scroller {
+  will-change: transform;
+}
+
+.scroller ul {
+  will-change: transform;
+}
+
+/* Additional responsive utilities if needed */
+@media (max-width: 475px) {
+  .scroller {
+    /* Adjust mask for very small screens */
+    -webkit-mask-image: linear-gradient(to right, transparent, white 5%, white 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, white 5%, white 95%, transparent);
+  }
 }

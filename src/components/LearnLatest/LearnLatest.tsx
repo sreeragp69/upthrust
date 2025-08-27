@@ -126,14 +126,14 @@ const LearnLatest: React.FC = () => {
             >
               {data.mainTitle}
             </motion.h2>
-            <motion.p
+            <motion.h3
               className="text-lightGray text-xs md:text-sm  lg:text-sm xl:text-base 2xl:text-base leading-relaxed lg:leading-snug xl:leading-relaxed font-alexandria"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               {data.subtitle}
-            </motion.p>
+            </motion.h3>
             <motion.div
               className="mt-6"
               initial={{ opacity: 0, y: 20 }}
@@ -172,14 +172,14 @@ const LearnLatest: React.FC = () => {
               >
                 {data.mainTitle}
               </motion.h2>
-              <motion.p
+              <motion.h3
                 className="text-lightGray text-xs lg:text-[16px] xl:text-sm 2xl:text-sm  tracking-[0.02em] lg:leading-5 2xl:leading-5 font-alexandria w-full lg:w-[85%]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 {data.subtitle}
-              </motion.p>
+              </motion.h3>
             </motion.div>
 
             <motion.div
@@ -222,7 +222,7 @@ const LearnLatest: React.FC = () => {
             variants={itemVariants}
           >
             <motion.div
-              className="text-center md:text-left lg:text-left"
+              className="text-center md:text-left lg:text-left px-2 md:px-0"
               variants={containerVariants}
             >
               {data.features.map((feature) => (

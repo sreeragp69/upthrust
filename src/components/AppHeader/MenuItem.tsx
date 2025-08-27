@@ -15,7 +15,7 @@ type MenuItemProps = {
   active: string | null;
   setActive: (item: string | null) => void;
   children?: React.ReactNode;
-  path: string; // can be "#about" or "/services"
+  path: string; 
 };
 
 const MenuItem: React.FC<MenuItemProps> = ({

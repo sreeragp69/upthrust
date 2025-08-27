@@ -11,12 +11,12 @@ export const FOOTER_DATA = {
     {
       title: "Useful Links",
       links: [
-        { label: "Home", href: "/" },
-        { label: "About", href: "/about" },
-        { label: "Digital Marketing", href: "/digital-marketing" },
-        { label: "Game Marketing", href: "/game-marketing" },
-        { label: "Batches", href: "/batches" },
-        { label: "Contact", href: "/contact" },
+        { label: "Home", href: "#home" },
+        { label: "About", href: "#about-us" },
+        { label: "Digital Marketing", href: "#" },
+        { label: "Game Marketing", href: "#" },
+        { label: "Batches", href: "#batches" },
+        { label: "Contact", href: "#contact" },
       ],
     },
   ],
