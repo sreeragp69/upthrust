@@ -22,7 +22,7 @@ export const learnLatestData: LearnLatestData = {
       id: "Career-focused-learning",
       title: "Career-focused learning",
       description:
-        "For the design enthusiasts, build your career with 3D animation and VFX courses tailored specifically for students and professionals alike. Apart from this individuals will be getting internship & placement opportunities from The Upthrust.",
+        "Master game dev skills by learning 3D modeling, texturing, sculpting, and rigging with industry-leading tools like Unreal, Unity, Blender, Maya, and ZBrush, and transform your creative ideas into stunning digital realities.",
     },
   ],
  

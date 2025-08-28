@@ -12,6 +12,7 @@ import SocialSidebar from "../common/SocialSidebar";
 import { InfiniteMovingCards } from "./infinite-moving-cards";
 import { HomeSwiperImages } from "../../constant/Home.data";
 
+
 const LandingPage: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -136,8 +137,12 @@ const LandingPage: React.FC = () => {
             </p>
           </motion.div>
         </div>
+              <div className="container flex items-center justify-center   ">
 
         <LandingCardSwiper />
+              </div>
+
+     
 
         <motion.div
           className="hidden md:grid justify-items-center grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 2xl:gap-6 w-full mt-20 sm:mt-24 md:mt-28 lg:px-8 xl:px-5"
@@ -153,7 +158,7 @@ const LandingPage: React.FC = () => {
 
         {/* Enhanced spacing and animation for swiper */}
         <motion.div
-          className="container mt-2 md:mt-10 lg:mt-12 mx-auto px-4 py-8"
+          className="container mt-2 md:mt-10 lg:mt-16 mx-auto px-4 py-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}

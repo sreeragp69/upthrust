@@ -22,6 +22,7 @@ export const FOOTER_DATA = {
   ],
   contact: {
     phone: "+91 93997 86885",
+    email: "admissions@theupthrust.com",
     address: {
       line1: "10/2, 1st Floor, Shree",
       line2: "Mahadeo House, near Hotel",

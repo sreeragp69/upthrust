@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
@@ -31,13 +31,31 @@ export const Select: React.FC<SelectProps> = ({
   required = false,
 }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  
+  const [dropUp, setDropUp] = useState(false); // 👈 new state
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+
   const selectedOption = options.find((option) => option.value === value);
-  
+
   const handleOptionSelect = (optionValue: string, optionLabel: string) => {
     onChange(optionValue, optionLabel);
     setIsDropdownOpen(false);
   };
+
+  // 👇 check space on open
+  useEffect(() => {
+    if (isDropdownOpen && buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const spaceAbove = rect.top;
+
+      // if not enough space below but enough space above → open upwards
+      if (spaceBelow < 200 && spaceAbove > spaceBelow) {
+        setDropUp(true);
+      } else {
+        setDropUp(false);
+      }
+    }
+  }, [isDropdownOpen]);
 
   return (
     <div className="space-y-1">
@@ -46,6 +64,7 @@ export const Select: React.FC<SelectProps> = ({
       )}
       <div className="relative">
         <button
+          ref={buttonRef}
           type="button"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           className={`
@@ -61,16 +80,20 @@ export const Select: React.FC<SelectProps> = ({
             {selectedOption?.label || placeholder}
           </span>
           <ChevronDown
-            className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
+            className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
+              isDropdownOpen ? "rotate-180" : ""
+            }`}
           />
         </button>
 
         {isDropdownOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: dropUp ? 10 : -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-xl shadow-lg z-10 max-h-48 overflow-y-auto"
+            exit={{ opacity: 0, y: dropUp ? 10 : -10 }}
+            className={`absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-xl shadow-lg z-10 max-h-48 overflow-y-auto
+              ${dropUp ? "bottom-full mb-1" : "top-full mt-1"}
+            `}
           >
             {options.map((option) => (
               <button
@@ -96,4 +119,4 @@ export const Select: React.FC<SelectProps> = ({
       )}
     </div>
   );
-}
+};

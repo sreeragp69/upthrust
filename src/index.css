@@ -237,6 +237,7 @@
   }
 
   /* Hide all scrollbars */
+
   * {
     scrollbar-width: none;
     -ms-overflow-style: none;

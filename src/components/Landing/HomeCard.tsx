@@ -66,7 +66,7 @@ const HomeCard: React.FC<HomeCardProps> = ({
 
   // ✅ Once parent API finished, show actual card
   return (
-    <div className="w-full max-w-sm 2xl:max-w-(--breakpoint-2xl)">
+    <div className="w-full  max-w-sm 2xl:max-w-(--breakpoint-2xl)">
       <motion.div
         ref={cardRef}
         key={id}
@@ -82,7 +82,7 @@ const HomeCard: React.FC<HomeCardProps> = ({
           // delay: index * 0.2,
           ease: [0.25, 0.46, 0.45, 0.94],
         }}
-        className="relative overflow-visible rounded-3xl cursor-pointer group"
+        className="relative overflow-visible h-[290px] sm:h-auto md:h-auto rounded-3xl cursor-pointer group"
       >
         {/* Background Container */}
         <div className="relative w-full h-full">
@@ -148,14 +148,14 @@ const HomeCard: React.FC<HomeCardProps> = ({
             className="text-white"
           >
             <motion.p
-              className="text-xl md:text-lg lg:text-xl font-light mb-1 tracking-wide drop-shadow-lg"
+              className="text-base md:text-lg lg:text-xl font-light mb-1 tracking-wide drop-shadow-lg"
               whileHover={{ x: 5 }}
               transition={{ duration: 0.2 }}
             >
               Become a
             </motion.p>
             <motion.p
-              className="text-4xl md:text-2xl lg:text-4xl font-clash font-bold uppercase leading-tight tracking-tight drop-shadow-lg"
+              className="text-2xl md:text-2xl lg:text-4xl font-clash font-bold uppercase leading-tight tracking-tight drop-shadow-lg"
               whileHover={{ x: 5 }}
               transition={{ duration: 0.2, delay: 0.1 }}
             >

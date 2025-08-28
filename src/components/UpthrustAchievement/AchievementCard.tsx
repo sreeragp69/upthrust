@@ -15,7 +15,9 @@ const AchievementCard: React.FC<Omit<AchievementCardProps, "id">> = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -2, transition: { duration: 0.2 } }}
+     
+      
+      whileHover={{ transition: { duration: 0.3 } }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="relative bg-white rounded-3xl p-5 xs:p-6 hover:shadow-lg hover:shadow-gray-100  md:p-7 flex flex-col items-start w-full h-full"
     >

@@ -45,8 +45,8 @@ const CentreSection = () => {
       transition: { duration: 0.6 },
     },
     hover: {
-      scale: 1.03,
-      boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.1)",
+      // boxShadow: "0px 6px 5px rgba(0, 0, 0, 0.1)",
+      scale: 1.01,
       transition: { duration: 0.3 },
     },
   };

@@ -3,7 +3,7 @@
 import type React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, MapPin, Send } from "lucide-react";
+import { Phone, MapPin, Send, Mail } from "lucide-react";
 import type { FooterProps, ContactFormData } from "../types/AppFooter.type";
 import { FOOTER_DATA } from "../constant/AppFooter.data";
 import Form from "../components/ui/form/Form";
@@ -154,7 +154,7 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.5 }}
-                    className="flex items-start justify-start sm:justify-start gap-2 sm:gap-3"
+                    className="flex items-start justify-start sm:justify-start md:items-center gap-2 sm:gap-3"
                   >
                     <Phone className="w-4 h-4 text-gray-500 flex-shrink-0" />
                     <span className="text-gray-600 text-sm sm:text-base font-nunito">
@@ -164,8 +164,19 @@ const AppFooter: React.FC<FooterProps> = ({ isLoading = false }) => {
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.5 }}
+                    className="flex items-start justify-start sm:justify-start md:items-center gap-2 sm:gap-3"
+                  >
+                    <Mail  className="w-4 h-4 text-gray-500 flex-shrink-0" />
+                    <span className="text-gray-600 text-sm sm:text-base font-nunito">
+                      {FOOTER_DATA.contact.email}
+                    </span>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.6 }}
-                    className="flex items-start justify-start sm:justify-start gap-2 sm:gap-3"
+                    className="flex items-start justify-start sm:justify-start  gap-2 sm:gap-3"
                   >
                     <MapPin className="w-4 h-4 text-gray-500 flex-shrink-0 mt-0.5" />
                     <div className="text-gray-600 text-sm sm:text-base leading-relaxed font-nunito">
